@@ -1,0 +1,47 @@
+:root{
+    --main-c: #ffc300;
+    --black-c: #000;
+  
+  }
+
+
+  .tarjeta-rest{
+    background-repeat: no-repeat;
+    height: 400px;
+    border-radius: 6px;
+    padding: 1rem .5rem;
+    display: flex;
+    align-items: flex-end;
+  }
+  .wrap-text_tarjeta-rest{
+    color: #fff;
+    padding: .5rem;
+    border-radius: 6px;
+    background:linear-gradient(to top, rgb(0 0 0 / .5), rgb(0 0 0 / .5));
+  }
+  
+  .wrap-text_tarjeta-rest p{
+    color: #f2f2f2;
+  }
+  .cta-wrap_tarjeta-rest{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .precio_tarjeta-rest span{
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .cta_tarjeta-rest{
+    background-color: var(--main-c);
+    padding: .25rem 1rem;
+    border-radius: 4px;
+  }
+  .cta_tarjeta-rest a{
+    color: #fff;
+    font-weight: bold;
+    
+  }
+  
+  

@@ -1,0 +1,19 @@
+.cont {
+    text-align: center;
+    color: aliceblue;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 10%;
+    min-height: 50px;
+    
+    display: inline-block;
+    background: rgb(55, 55, 55);
+    min-width: 60px;
+    width: auto;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .cont-padre{
+    display: inline-block;
+  }

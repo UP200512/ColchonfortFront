@@ -1,0 +1,96 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC260;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3; 
+
+}
+
+
+
+input {
+    width: 70%;
+    padding: 10px;
+}
+
+button {
+    width: 20%;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #000;
+    transition: background-color .5s;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+ul {
+    text-align: left;
+}
+
+ul li {
+    border-bottom: 1px dashed #333;
+    margin: 8px 0;
+}
+
+span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: firebrick;
+    border-radius: 100%;
+    text-align: center;
+    color: var(--blanco);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+span:hover {
+    background-color: darkred;
+}
+
+
+h1{
+    text-align: center;
+}
+
+h1, h2, h3{
+    color: var(--oscuro);
+}
+
+/* pedidos */
+
+.pedidos{
+    background-color: var(--grisClaro);
+    width: min( 60rem, 80%); 
+    margin:  0 auto; 
+    padding: 2rem;
+    border-radius: 1rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+
+.alinear-derecha{
+    justify-content: end;
+}
+
+.w-sh-100{
+    width: 100%;
+}
+
+@media (min-width: 760px)  {
+     .w-sh-100{
+        width: auto;
+
+     }
+}

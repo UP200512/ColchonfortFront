@@ -1,0 +1,37 @@
+:root{
+    --main-c: #ffc300;
+    --black-c: #000;
+  
+  }
+
+
+  .wrap-footer{
+    background-color: var(--main-c);
+    padding: 2rem 0;
+    
+  }
+
+ 
+    @media (min-width: 760px)  {
+        .info{
+    
+            display: grid; 
+        
+            grid-template-columns: repeat(3, 1fr); 
+            column-gap: 1.2rem;
+        }
+    }
+    
+  
+
+  .networks{
+    text-align: center;
+  }
+
+  .general{
+    text-align: center;
+  }
+
+  .otros{
+    text-align: center;
+  }
