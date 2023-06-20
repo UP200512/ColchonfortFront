@@ -25,7 +25,7 @@ function AddInsumoModal(props) {
     const [insertedInsumo, setInserted] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
-
+//hola
         const newInusmo = {
             nombre: nombre,
             tipo: tipo,
