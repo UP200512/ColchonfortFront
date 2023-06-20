@@ -33,7 +33,7 @@ const Pedidos = () => {
     <div>
       <h1 style={{ color: "aliceblue" }}>Pedidos</h1>
 
-      <section className="pedidos">
+      <form className="pedidos">
         <h2>Pedidos de la mesa</h2>
         <input
           type="text"
@@ -63,7 +63,7 @@ const Pedidos = () => {
           <input className="boton w-sh-100" type="submit" value="Enviar" />
         </div>
         
-      </section>
+      </form>
     </div>
   );
 };
