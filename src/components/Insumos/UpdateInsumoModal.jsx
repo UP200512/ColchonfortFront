@@ -8,20 +8,22 @@ import "./AddInsumo.css";
 import Form from "react-bootstrap/Form";
 import { useState} from "react";
 
-function AddInsumoModal(props) {
-    const {unidadesmedida, tipoinsumo } = props;
-    const [nombre, setNombre] = useState("");
-    const [tipo, setTipo] = useState(null);
-    const [unidad, setUnidad] = useState(null);
-    const [cantidad, setCantidad] = useState(0);
-    const [descripcion, setDescripcion] = useState("");
+function UpdateInsumoModal(props) {
 
-    const [insertedInsumo, setInserted] = useState({});
+
+    const { unidadesmedida, tipoinsumo } = props;
+    const id=props.id;
+    const [nombre, setNombre] = useState(props.nombre);
+    const [tipo, setTipo] = useState(props.tipo);
+    const [unidad, setUnidad] = useState(props.unidad);
+    const [cantidad, setCantidad] = useState(props.cantidad);
+    const [descripcion, setDescripcion] = useState(props.descripcion);
+    const [insertedInsumo, setInserted] = useState({})  ;
 
     const handleSubmit = () => {
         // e.preventDefault();
 
-        const newInsumo = {
+        const UpdatedInsumo = {
             nombre: nombre,
             tipo_insumo_id: tipo,
             unidad_de_medida_id: unidad,
@@ -29,18 +31,19 @@ function AddInsumoModal(props) {
             cantidad: cantidad,
         };
         const requestOptions = {
-            method: "POST",
+            method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newInsumo),
+            body: JSON.stringify(UpdatedInsumo),
         };
-
-        fetch("http://localhost:3000/api/insumos", requestOptions)
+        const ruta= "http://localhost:3000/api/insumos/" + id
+        // console.log(ruta);
+        fetch(ruta, requestOptions)
             .then((res) => res.json())
             .then((insumo) => setInserted(insumo));
-        console.log(insertedInsumo);
+        // console.log(insertedInsumo);
         // .then((data) => console.log(data))
 
-        console.log(newInsumo);
+        // console.log(newInsumo);
     };
 
     return (
@@ -53,7 +56,7 @@ function AddInsumoModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Agregar nuevo insumo
+                    Actualizar insumo
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -66,6 +69,7 @@ function AddInsumoModal(props) {
                             maxLength={49}
                             placeholder="Insumo"
                             autoFocus
+                            value={nombre}
                             onChange={(e) => setNombre(e.target.value)}
                         />
                     </Form.Group>
@@ -75,6 +79,7 @@ function AddInsumoModal(props) {
                             required
                             defaultValue={-1}
                             aria-label="tipo_de_insumo"
+                            value={tipo}
                             onChange={(e) => setTipo(e.target.value)}
                         >
                             <option value={-1} disabled>
@@ -93,6 +98,7 @@ function AddInsumoModal(props) {
                             required
                             defaultValue={-1}
                             aria-label="unidad_de_medida"
+                            value={unidad}
                             onChange={(e) => setUnidad(e.target.value)}
                         >
                             <option value={-1} disabled>
@@ -112,6 +118,7 @@ function AddInsumoModal(props) {
                             required
                             min={0}
                             type="number"
+                            value={cantidad}
                             pattern="[0-9]"
                             onChange={(e) => setCantidad(e.target.value)}
                         />
@@ -124,6 +131,7 @@ function AddInsumoModal(props) {
                             as="textarea"
                             rows={3}
                             maxLength={99}
+                            value={descripcion}
                             onChange={(e) => setDescripcion(e.target.value)}
                         />
                     </Form.Group>
@@ -131,7 +139,7 @@ function AddInsumoModal(props) {
                         <Button variant="danger" onClick={props.onHide}>
                             Cancelar
                         </Button>
-                        <Button type="submit" >Agregar</Button>
+                        <Button type="submit" >Actualizar</Button>
 
                     
                 </Form>
@@ -140,4 +148,4 @@ function AddInsumoModal(props) {
         </Modal>
     );
 }
-export default AddInsumoModal;
+export default UpdateInsumoModal;
