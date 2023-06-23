@@ -3,6 +3,7 @@ import HomePage from "../views/Home/HomePage.jsx";
 import  Carta  from "../views/Carta/Carta.jsx";
 import PedidosPage from "../views/Pedidos/PedidosPage.jsx";
 import InsumosPage from "../views/Insumos/InsumosPage.jsx";
+import PedidosNuevo from "../views/Pedidos/PedidosNuevos.jsx";
 
 
 function Autho() {
