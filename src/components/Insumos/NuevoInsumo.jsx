@@ -19,11 +19,11 @@ function NuevoInsumo() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/tiposInsumo")
+    fetch("http://localhost:3000/api/tiposInsumos")
       .then((res) => res.json())
       .then((tipoInsumo) => setTipoInsumo(tipoInsumo));
   }, []);
-  console.log(tipoInsumo)
+  // console.log(tipoInsumo)
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
