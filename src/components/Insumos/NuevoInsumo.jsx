@@ -19,7 +19,7 @@ function NuevoInsumo() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/tiposInsumos")
+    fetch("http://localhost:3000/api/tiposInsumo")
       .then((res) => res.json())
       .then((tipoInsumo) => setTipoInsumo(tipoInsumo));
   }, []);
