@@ -9,6 +9,23 @@ const Pedidos = () => {
   const [pedidoInput, setPedidoInput] = useState("");
   const [productos, setProductos] = useState([]);
   const [mesa, setMesa] = useState(0);
+  const [insertedIdPedidos, setInsertedIdPedidos] = useState(0);
+  useEffect(() => {
+    // const requestOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(jsonMesa),
+    // };
+    // try{
+    //   fetch("http://localhost:3000/api/detalle", requestOptions)
+    //   .then((res) => res.json())
+    //   .then((resjson) => setInsertedIdPedidos(resjson.id ));
+    // }catch (error){
+    //   alert("no fue posible hacer el registro del pedido")
+      
+    // }
+    console.log(pedidos)
+  }, [insertedIdPedidos] )
 
   useEffect(() => {}, [pedidos]);
 
@@ -16,12 +33,41 @@ const Pedidos = () => {
   useEffect(() => {
     buscarProduto();
   }, [pedidoInput]);
-  
+
   //funcion para hacer el registro del pedido
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(pedidos);
-    console.log(mesa)
+    const jsonMesa={
+      mesa: mesa
+    }
+    // console.log(jsonMesa);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(jsonMesa),
+    };
+    try{
+      fetch("http://localhost:3000/api/pedidos", requestOptions)
+      .then((res) => res.json())
+      .then((resjson) => setInsertedIdPedidos(resjson.id ));
+    }catch (error){
+      alert("no fue posible hacer el registro del pedido")
+      e.preventDefault();
+    }
+    
+
+
+    
+
+    // fetch("http://localhost:3000/api/pedidos", {
+    //   method: "POST",
+    //   body: JSON.stringify({ mesa: mesa }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((resjson) => console.log(resjson.insertId));
+
+    // console.log(pedidos);
+    // console.log(mesa);
   };
 
   //funcion para pasarla a cada elemento de la lista para agregar un producto al pedido
@@ -85,7 +131,7 @@ const Pedidos = () => {
           id="input_mesa"
           placeholder="Numero de mesa"
           type="number"
-          onChange={(e)=>{
+          onChange={(e) => {
             setMesa(e.target.value);
           }}
           min={0}
