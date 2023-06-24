@@ -19,5 +19,4 @@ function PedidosPage() {
     </div>
   );
 }
-
 export default PedidosPage;

@@ -1,6 +1,6 @@
 .cont {
     text-align: center;
-    color: aliceblue;
+    color: rgb(37, 117, 188);
     padding: 5px;
     margin-top: 5px;
     margin-left: 5px;
@@ -8,7 +8,7 @@
     min-height: 50px;
     
     display: inline-block;
-    background: rgb(55, 55, 55);
+    background: rgb(91, 70, 184);
     min-width: 60px;
     width: auto;
     font-family: 'Courier New', Courier, monospace;
