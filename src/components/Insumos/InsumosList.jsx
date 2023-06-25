@@ -2,7 +2,7 @@ import React from "react";
 import "./InsumosList.css";
 import {  useState, useEffect } from "react";
 import InsumosIndividual from "./InsumoIndividual";
-import NuevoInsumo from "./NuevoInsumo";
+// import NuevoInsumo from "./NuevoInsumo";
 function InsumosList() {
   const [insumos, setData] = useState([]);
 
@@ -16,12 +16,8 @@ function InsumosList() {
   if (insumos.length === 0) {
     return <h1>No hay insumos</h1>;
   } else {
-
-
-
-
     return (
-      <div className="insumoslist" >
+      <div className="cont-padre" >
           {
             insumos.map((insumo) =>(
                <div key={insumo.id_insumo} className="cont" > 
@@ -31,6 +27,10 @@ function InsumosList() {
                   tipo={insumo.tipo_insumo_id}
                   unidad={insumo.unidad_de_medida_id}
                   descripcion={insumo.descripcion}
+                  cantidad={insumo.cantidad}
+                  nombre_tipo={insumo.nombre_tipo}
+                  nombre_unidad={insumo.nombre_unidad}
+                  abreviacion={insumo.abreviacion}
                   />
               </div>
             ))

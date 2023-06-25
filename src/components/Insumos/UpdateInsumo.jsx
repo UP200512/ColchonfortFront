@@ -3,11 +3,20 @@ import "./InsumosList.css";
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import AddInsumoModal from "./AddInsumoModal";
+// import AddInsumoModal from "./AddInsumoModal";
+import UpdateInsumoModal from "./UpdateInsumoModal";
 
 
 
-function NuevoInsumo() {
+
+function UpdateInsumo({id, nombre, tipo, unidad, descripcion, cantidad}) {
+  // nombre={nombre}
+  //     id={id}
+  //     tipo={tipo}
+  //     unidad={unidad}
+  //     descripcion={descripcion}
+  //     cantidad={cantidad}
+  
   const [unidadesMedida, setUnidadesMedida] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
   const [tipoInsumo, setTipoInsumo] = useState([]);
@@ -27,19 +36,26 @@ function NuevoInsumo() {
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Agregar insumo
+        Actualizar insumo
       </Button>
 
-      <AddInsumoModal
+      <UpdateInsumoModal
+
         unidadesmedida= {unidadesMedida}
         show={modalShow}
         backdrop="static"
         onHide={() => setModalShow(false)}
         tipoinsumo = {tipoInsumo}
-        
+        nombre={nombre}
+        id={id}
+        tipo={tipo}
+        unidad={unidad}
+        descripcion={descripcion}
+        cantidad={cantidad}
+
 
       />
     </>
   );
 }
-export default NuevoInsumo;
+export default UpdateInsumo;

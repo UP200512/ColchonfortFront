@@ -21,7 +21,7 @@ function PedidosList() {
 
 
     return (
-      <div className="pedidoslist" >
+      <div className="cont-padre" >
           {
             pedidos.map((pedido) =>(
                <div key={pedido.id_pedido} className="cont" > 
