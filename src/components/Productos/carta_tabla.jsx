@@ -28,7 +28,8 @@ const CartaTabla = () => {
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Tipo</th>
+                <th scope="col" colspan="2">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -38,6 +39,8 @@ const CartaTabla = () => {
                 nombre= {item.nombre}
                 descripcion= {item.descripcion}
                 precio={item.precio}
+                tipo={item.tipo}
+                id_tipo={item.id_tipo}
                 />
               ))}
             </tbody>

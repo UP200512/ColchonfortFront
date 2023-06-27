@@ -33,8 +33,10 @@ const CartaTablaDetalle = (props) => {
                 <th scope="col">Producto</th>
                 <th scope="col">Tipo de Producto</th>
                 <th scope="col">ID Insumo</th>
+                <th scope="col">Insumo</th>
                 <th scope="col">Tipo de Insumo</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>

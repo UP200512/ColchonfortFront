@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { DeleteInsumo} from "./funciones";
 import { Form } from "react-bootstrap";
 import UpdateInsumo from "./UpdateInsumo";
+
 function InsumosIndividual(props) {
   const { id, nombre, tipo, unidad, descripcion, cantidad, nombre_tipo, nombre_unidad, abreviacion } = props;
 

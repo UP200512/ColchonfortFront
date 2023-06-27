@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../../components/header/header.jsx';
 import Footer from "../../components/footer/footer.jsx";
 import CartaTablaDetalle from '../../components/Productos/carta_tabla_detalle.jsx';
+import OpcionesProductosDetalle from "../../components/Opciones_Detalle_Productos/OpcionesDetalleProductos.jsx";
 import { useParams } from 'react-router-dom';
 
 function CartaTablaDetalleView() {
@@ -13,6 +14,7 @@ function CartaTablaDetalleView() {
     return (
         <React.Fragment>
             <Header />
+            <OpcionesProductosDetalle />
             <CartaTablaDetalle
                 id_producto={id_producto}
             />

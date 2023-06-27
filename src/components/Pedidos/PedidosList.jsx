@@ -7,11 +7,13 @@ function PedidosList() {
   const [pedidos, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/pedidos")
+    fetch("http://localhost:3001/api/pedidos")
       .then((res) => res.json())
       .then((pedidos) => setData(pedidos));
     // .then((data) => console.log(data))
   }, []);
+
+  console.log(pedidos);
 
   if (pedidos.length === 0) {
     return <h1>No hay pedidos activos</h1>;

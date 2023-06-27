@@ -1,45 +1,46 @@
 import React from "react";
-import "./InsumosList.css";
+// import "./InsumosList.css";
 // import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import "./AddInsumo.css";
+import "./AddProducto.css";
 import Form from "react-bootstrap/Form";
 import { useState} from "react";
 
-function UpdateInsumoModal(props) {
+function UpdateProductoModal(props) {
 
 
-    const { unidadesmedida, tipoinsumo } = props;
+    const { tipoproducto } = props;
     const id=props.id;
+    const tipo = props.tipo;
     const [nombre, setNombre] = useState(props.nombre);
-    const [tipo, setTipo] = useState(props.tipo);
-    const [unidad, setUnidad] = useState(props.unidad);
-    const [cantidad, setCantidad] = useState(props.cantidad);
+    const [id_tipo, setTipo] = useState(props.id_tipo);
+    const [precio, setPrecio] = useState(props.precio);
     const [descripcion, setDescripcion] = useState(props.descripcion);
     const [insertedInsumo, setInserted] = useState({})  ;
+
+    console.log("el tipo es" + id_tipo);
 
     const handleSubmit = () => {
         // e.preventDefault();
 
-        const UpdatedInsumo = {
+        const UpdatedProducto = {
             nombre: nombre,
-            tipo_insumo_id: tipo,
-            unidad_de_medida_id: unidad,
+            id_tipo_prod : id_tipo,
             descripcion: descripcion,
-            cantidad: cantidad,
+            precio: precio,
         };
         const requestOptions = {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(UpdatedInsumo),
+            body: JSON.stringify(UpdatedProducto),
         };
-        const ruta= "http://localhost:3001/api/insumos/" + id
+        const ruta= "http://localhost:3001/api/productos/" + id
         // console.log(ruta);
         fetch(ruta, requestOptions)
             .then((res) => res.json())
-            .then((insumo) => setInserted(insumo));
+            .then((producto) => setInserted(producto));
         // console.log(insertedInsumo);
         // .then((data) => console.log(data))
 
@@ -56,72 +57,41 @@ function UpdateInsumoModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Actualizar insumo
+                    Actualizar producto
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="AddInsumoId">
-                        <Form.Label>Insumo:</Form.Label>
+                        <Form.Label>Producto:</Form.Label>
                         <Form.Control
                             required
                             type="text"
                             maxLength={49}
-                            placeholder="Insumo"
+                            placeholder="Producto"
                             autoFocus
                             value={nombre}
                             onChange={(e) => setNombre(e.target.value)}
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Tipo de insumo:</Form.Label>
+                        <Form.Label>Tipo de producto:</Form.Label>
                         <Form.Select
                             required
                             defaultValue={-1}
-                            aria-label="tipo_de_insumo"
+                            aria-label="tipo_de_producto"
                             value={tipo}
                             onChange={(e) => setTipo(e.target.value)}
                         >
                             <option value={-1} disabled>
-                                Selecciona un tipo de insumo
+                                Selecciona un tipo de producto
                             </option>
-                            {tipoinsumo.map((tipo) => (
-                                <option key={tipo.id_tipo} value={tipo.id_tipo}>
+                            {tipoproducto.map((tipo) => (
+                                <option key={tipo.id_tipo_prod} value={tipo.id_tipo_prod}>
                                     {tipo.nombre}
                                 </option>
                             ))}
                         </Form.Select>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Unidad de medida:</Form.Label>
-                        <Form.Select
-                            required
-                            defaultValue={-1}
-                            aria-label="unidad_de_medida"
-                            value={unidad}
-                            onChange={(e) => setUnidad(e.target.value)}
-                        >
-                            <option value={-1} disabled>
-                                Selecciona una unidad de medida
-                            </option>
-                            {unidadesmedida.map((unidad) => (
-                                <option key={unidad.id_unidad} value={unidad.id_unidad}>
-                                    {unidad.nombre} - {unidad.abreviacion}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="Cantidad">
-                        <Form.Label>Cantidad</Form.Label>
-                        <Form.Control
-                            required
-                            min={0}
-                            type="number"
-                            value={cantidad}
-                            pattern="[0-9]"
-                            onChange={(e) => setCantidad(e.target.value)}
-                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="descripcion">
@@ -130,9 +100,21 @@ function UpdateInsumoModal(props) {
                             required
                             as="textarea"
                             rows={3}
-                            maxLength={99}
+                            maxLength={254}
                             value={descripcion}
                             onChange={(e) => setDescripcion(e.target.value)}
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="Cantidad">
+                        <Form.Label>Precio</Form.Label>
+                        <Form.Control
+                            required
+                            min={0}
+                            type="number"
+                            value={precio}
+                            pattern="[0-9]"
+                            onChange={(e) => setPrecio(e.target.value)}
                         />
                     </Form.Group>
                     
@@ -148,4 +130,4 @@ function UpdateInsumoModal(props) {
         </Modal>
     );
 }
-export default UpdateInsumoModal;
+export default UpdateProductoModal;
