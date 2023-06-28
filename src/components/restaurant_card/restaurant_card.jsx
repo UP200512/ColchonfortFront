@@ -14,7 +14,7 @@ function TarjetaRest(props) {
                 <p>{descripcion}</p>
                 <div className="cta-wrap_tarjeta-rest">
                     <div className="precio_tarjeta-rest">
-                        <span>{valor}</span>
+                        <span>{"$" + valor}</span>
                     </div>
                     <div className="cta_tarjeta-rest">
                         <a href=".">Pedir ahora</a>

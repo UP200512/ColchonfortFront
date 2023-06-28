@@ -34,7 +34,7 @@ function AddInsumoModal(props) {
             body: JSON.stringify(newInsumo),
         };
 
-        fetch("http://localhost:3000/api/insumos", requestOptions)
+        fetch("http://localhost:3001/api/insumos", requestOptions)
             .then((res) => res.json())
             .then((insumo) => setInserted(insumo));
         console.log(insertedInsumo);
