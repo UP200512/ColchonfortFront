@@ -6,14 +6,15 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./AddProducto.css";
 import Form from "react-bootstrap/Form";
-import { useState} from "react";
+import { useState } from "react";
 
 function AddProductoModal(props) {
-    const {tipoproducto } = props;
+    const { tipoproducto } = props;
     const [nombre, setNombre] = useState("");
     const [tipo, setTipo] = useState(null);
     const [precio, setPrecio] = useState(0);
     const [descripcion, setDescripcion] = useState("");
+    const [prioridad, setPrioriad] = useState(1);
 
     const [insertedProducto, setInserted] = useState({});
 
@@ -25,6 +26,7 @@ function AddProductoModal(props) {
             id_tipo_prod: tipo,
             descripcion: descripcion,
             precio: precio,
+            prioridad: prioridad
         };
         const requestOptions = {
             method: "POST",
@@ -67,6 +69,7 @@ function AddProductoModal(props) {
                             onChange={(e) => setNombre(e.target.value)}
                         />
                     </Form.Group>
+
                     <Form.Group>
                         <Form.Label>Tipo de producto:</Form.Label>
                         <Form.Select
@@ -85,8 +88,9 @@ function AddProductoModal(props) {
                             ))}
                         </Form.Select>
                     </Form.Group>
+
                     <Form.Group>
-                    <Form.Label>Descripción:</Form.Label>
+                        <Form.Label>Descripción:</Form.Label>
                         <Form.Control
                             required
                             type="text"
@@ -107,13 +111,41 @@ function AddProductoModal(props) {
                             onChange={(e) => setPrecio(e.target.value)}
                         />
                     </Form.Group>
-                    
-                        <Button variant="danger" onClick={props.onHide}>
-                            Cancelar
-                        </Button>
-                        <Button type="submit" >Agregar</Button>
 
-                    
+                    <Form.Group>
+                        <Form.Label>Prioridad:</Form.Label>
+                        <Form.Select
+                            required
+                            defaultValue={-1}
+                            aria-label="tipo_de_producto"
+                            onChange={(e) => setPrioriad(e.target.value)}
+                        >
+                            <option value={-1} disabled>
+                                Selecciona una prioridad
+                            </option>
+                            {(() => {
+                                const opciones = [];
+                                for (var i = 1; i <= 3; i++) {
+                                    opciones.push(
+                                        <option key={i} value={i}>
+                                            {i}
+                                        </option>
+                                    );
+                                }
+                                return opciones;
+                            })()}
+
+                        </Form.Select>
+                    </Form.Group>
+
+                    <Form.Group></Form.Group>
+                    <br></br>
+                    <Button variant="danger" onClick={props.onHide}>
+                        Cancelar
+                    </Button>
+                    <Button type="submit" >Agregar</Button>
+
+
                 </Form>
             </Modal.Body>
             <Modal.Footer></Modal.Footer>

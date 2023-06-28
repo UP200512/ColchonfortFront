@@ -12,7 +12,7 @@ const CartaTabla = () => {
   }, []);
 
   console.log(data);
-
+  if (data.length > 0) {
   return (
     <React.Fragment>
       <br></br>
@@ -29,6 +29,7 @@ const CartaTabla = () => {
                 <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Tipo</th>
+                <th scope="col">Prioridad</th>
                 <th scope="col" colspan="2">Acciones</th>
               </tr>
             </thead>
@@ -41,6 +42,7 @@ const CartaTabla = () => {
                 precio={item.precio}
                 tipo={item.tipo}
                 id_tipo={item.id_tipo}
+                prioridad= {item.prioridad}
                 />
               ))}
             </tbody>
@@ -48,7 +50,12 @@ const CartaTabla = () => {
         </div>
       </div>
       </React.Fragment>
-  );
+  )}
+  else {
+    return (
+      <h1>No hay productos</h1>
+    );
+  }
 };
 
 export default CartaTabla;

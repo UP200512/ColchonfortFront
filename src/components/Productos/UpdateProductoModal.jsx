@@ -18,6 +18,7 @@ function UpdateProductoModal(props) {
     const [id_tipo, setTipo] = useState(props.id_tipo);
     const [precio, setPrecio] = useState(props.precio);
     const [descripcion, setDescripcion] = useState(props.descripcion);
+    const [prioridad, setPrioriad] = useState(props.prioridad);
     const [insertedInsumo, setInserted] = useState({})  ;
 
     console.log("el tipo es" + id_tipo);
@@ -30,6 +31,7 @@ function UpdateProductoModal(props) {
             id_tipo_prod : id_tipo,
             descripcion: descripcion,
             precio: precio,
+            prioridad: prioridad,
         };
         const requestOptions = {
             method: "PATCH",
@@ -116,6 +118,32 @@ function UpdateProductoModal(props) {
                             pattern="[0-9]"
                             onChange={(e) => setPrecio(e.target.value)}
                         />
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>Prioridad:</Form.Label>
+                        <Form.Select
+                            required
+                            defaultValue={-1}
+                            aria-label="tipo_de_producto"
+                            onChange={(e) => setPrioriad(e.target.value)}
+                        >
+                            <option value={-1} disabled>
+                                Selecciona una prioridad
+                            </option>
+                            {(() => {
+                                const opciones = [];
+                                for (var i = 1; i <= 3; i++) {
+                                    opciones.push(
+                                        <option key={i} value={i}>
+                                            {i}
+                                        </option>
+                                    );
+                                }
+                                return opciones;
+                            })()}
+
+                        </Form.Select>
                     </Form.Group>
                     
                         <Button variant="danger" onClick={props.onHide}>

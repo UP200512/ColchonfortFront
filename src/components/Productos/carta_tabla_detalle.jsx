@@ -17,6 +17,7 @@ const CartaTablaDetalle = (props) => {
 
   console.log(data);
 
+  if (data.length > 0) {
   return (
     <React.Fragment>
       <br></br>
@@ -57,7 +58,12 @@ const CartaTablaDetalle = (props) => {
         </div>
       </div>
       </React.Fragment>
-  );
+  )}
+  else {
+    return (
+      <h1>No hay detalles</h1>
+    );
+  }
 };
 
 export default CartaTablaDetalle;

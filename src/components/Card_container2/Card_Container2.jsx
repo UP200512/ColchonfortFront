@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './Card_Container.css';
+import './Card_Container2.css';
 import TarjetaRest from "../restaurant_card/restaurant_card";
 import imagenSandwich from '../../img/sandwich.jpg';
 import imagenBurritos from '../../img/burrito.jpg';
@@ -7,7 +7,7 @@ import imagenPizza from '../../img/pizza.jpg';
 import imagenEnsalada from '../../img/ensalada.jpg';
 
 
-function Container() {
+function Container2() {
 
   const [data, setData] = useState([]);
 
@@ -19,14 +19,13 @@ function Container() {
       .catch(error => console.log(error));
   }, []);
 
-
   return (
     <div>
       <section class="wrap section">
-        <div class="column-4 columns">
+        <div class="column-2 columns">
 
-          {data.map(item => {
-            if (item.prioridad === 1) {
+        {data.map(item => {
+            if (item.prioridad === 2) {
               return (
                 <TarjetaRest
                   imagen={imagenSandwich}
@@ -41,8 +40,7 @@ function Container() {
         </div>
       </section>
     </div>
-  )
-
+  );
 }
 
-export default Container;
+export default Container2;
