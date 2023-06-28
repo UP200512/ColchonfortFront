@@ -8,7 +8,13 @@
 
 }
 
-
+.already {
+    background-color: #7dd99c;
+}
+.nuevosProductos{
+    background-color: #0e1534;
+    color: #fff;
+}
 
 input {
     width: 70%;

@@ -9,7 +9,7 @@ function OpcionesPedidos() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary" sticky="top"   >
       <Container fluid>
-        <Navbar.Brand href="#">Pedidos</Navbar.Brand>
+        <Navbar.Brand href="/pedidos">Pedidos</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,20 +17,11 @@ function OpcionesPedidos() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Activos</Nav.Link>
-            <Nav.Link href="#action2">Lista de Tabla</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+            <Nav.Link href="/pedidos" >Activos</Nav.Link>
+            <Nav.Link href="/pedidos/nuevo">Nuevo</Nav.Link>
+            
+            <Nav.Link href="#">
+              Vista de Tabla
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
