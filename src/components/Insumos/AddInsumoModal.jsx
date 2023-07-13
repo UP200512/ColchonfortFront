@@ -34,7 +34,7 @@ function AddInsumoModal(props) {
             body: JSON.stringify(newInsumo),
         };
 
-        fetch("http://localhost:3001/api/insumos", requestOptions)
+        fetch("http://localhost:3000/api/insumos", requestOptions)
             .then((res) => res.json())
             .then((insumo) => setInserted(insumo));
         console.log(insertedInsumo);
@@ -42,6 +42,7 @@ function AddInsumoModal(props) {
 
         console.log(newInsumo);
     };
+   
 
     return (
         <Modal
@@ -103,7 +104,9 @@ function AddInsumoModal(props) {
                                     {unidad.nombre} - {unidad.abreviacion}
                                 </option>
                             ))}
+                            
                         </Form.Select>
+                        <input type="text" id="input_nuevo_unidad" hidden />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="Cantidad">

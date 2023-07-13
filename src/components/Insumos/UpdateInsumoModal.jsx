@@ -35,7 +35,7 @@ function UpdateInsumoModal(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(UpdatedInsumo),
         };
-        const ruta= "http://localhost:3001/api/insumos/" + id
+        const ruta= "http://localhost:3000/api/insumos/" + id
         // console.log(ruta);
         fetch(ruta, requestOptions)
             .then((res) => res.json())

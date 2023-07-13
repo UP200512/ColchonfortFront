@@ -10,9 +10,10 @@ function NuevoProducto() {
   const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/tiposProductos")
+    fetch("http://localhost:3000/api/tiposProductos")
       .then((res) => res.json())
-      .then((tipoProducto) => setTipoProducto(tipoProducto));
+      .then((tipoProdu) => setTipoProducto(tipoProdu));
+      
   }, []);
 
   // console.log(tipoInsumo)

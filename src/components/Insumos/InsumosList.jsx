@@ -7,7 +7,7 @@ function InsumosList() {
   const [insumos, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/insumos")
+    fetch("http://localhost:3000/api/insumos")
       .then((res) => res.json())
       .then((insumos) => setData(insumos));
     // .then((data) => console.log(data))

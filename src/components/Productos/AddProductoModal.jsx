@@ -81,13 +81,20 @@ function AddProductoModal(props) {
                             <option value={-1} disabled>
                                 Selecciona un tipo de producto
                             </option>
-                            {tipoproducto.map((tipo) => (
-                                <option key={tipo.id_tipo_prod} value={tipo.id_tipo_prod}>
-                                    {tipo.nombre}
+                            {tipoproducto.length > 0 ? (
+                                tipoproducto.map((tipo) => (
+                                    <option key={tipo.id_tipo_prod} value={tipo.id_tipo_prod}>
+                                        {tipo.nombre}
+                                    </option>
+                                ))
+                            ) : (
+                                <option disabled>
+                                    No hay tipos de producto disponibles
                                 </option>
-                            ))}
+                            )}
                         </Form.Select>
                     </Form.Group>
+
 
                     <Form.Group>
                         <Form.Label>Descripción:</Form.Label>

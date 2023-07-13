@@ -17,7 +17,7 @@ const Detalles = () => {
   const [insertedIdPedidos, setInsertedIdPedidos] = useState(0);
   const [alredyInserted, setAlredyInserted] = useState([]);
   useEffect(() => {
-    console.log(alredyInserted);
+    // console.log(alredyInserted);
   }, [alredyInserted]);
 
   useEffect(() => {

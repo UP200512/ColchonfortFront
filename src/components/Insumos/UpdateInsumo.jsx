@@ -22,13 +22,13 @@ function UpdateInsumo({id, nombre, tipo, unidad, descripcion, cantidad}) {
   const [tipoInsumo, setTipoInsumo] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/unidades_de_medida")
+    fetch("http://localhost:3000/api/unidades_de_medida")
       .then((res) => res.json())
       .then((unidadesMedida) => setUnidadesMedida(unidadesMedida));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/tiposInsumo")
+    fetch("http://localhost:3000/api/tiposInsumo")
       .then((res) => res.json())
       .then((tipoInsumo) => setTipoInsumo(tipoInsumo));
   }, []);
