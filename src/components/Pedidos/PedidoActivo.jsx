@@ -1,6 +1,8 @@
 
 export function PedidosActivos(props) {
+
   const { id_pedido, fecha, total, activo, mesa } = props;
+
 
   return (
     <div>
