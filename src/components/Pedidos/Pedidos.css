@@ -16,7 +16,9 @@
     color: #fff;
 }
 
-input {
+
+.pedidos input {
+
     width: 70%;
     padding: 10px;
 }
@@ -33,21 +35,21 @@ input {
     color: #fff;
 } */
 
-button:hover {
+.pedidos button:hover {
     background-color: #333;
     color: #fff;
 }
 
-ul {
+.pedidos ul {
     text-align: left;
 }
 
-ul li {
+.pedidos ul, .pedidos li {
     border-bottom: 1px dashed #333;
     margin: 8px 0;
 }
 
-span {
+.pedidos span {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -59,16 +61,16 @@ span {
     cursor: pointer;
 }
 
-span:hover {
+.pedidos span:hover {
     background-color: darkred;
 }
 
 
-h1{
+.pedidos h1{
     text-align: center;
 }
 
-h1, h2, h3{
+.pedidos h1, .pedidos h2, .pedidos h3{
     color: var(--oscuro);
 }
 

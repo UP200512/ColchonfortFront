@@ -5,7 +5,7 @@ import './header.css';
 
 function Header() {
   return (
-    <header className="main-header">
+    <header className="main-header" >
       <div className="header-wrap">
         <div className="wrap-logo-header">
           <a className="logo-header" href="/">
@@ -25,10 +25,11 @@ function Header() {
                 <li className="menu-item"> {/**key para asigar un identificador unico que en este caso seria index */}
                   
                   <a href='/Carta'> Carta</a>
-                  <a href='/Estadisticas'>Estadisticas</a>
+                  {/* <a href='/Estadisticas'>Estadisticas</a> */}
                   <a href='/Pedidos'> Pedidos</a>
+                  <a href='/Insumos'> Insumos</a>
                 </li>
-              ))
+              
             </ul>
           </nav>
         </div>
