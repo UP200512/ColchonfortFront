@@ -47,7 +47,7 @@ ul li {
     margin: 8px 0;
 }
 
-span {
+.pedidos span {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -59,16 +59,16 @@ span {
     cursor: pointer;
 }
 
-span:hover {
+.pedidos span:hover {
     background-color: darkred;
 }
 
 
-h1{
+.pedidos h1{
     text-align: center;
 }
 
-h1, h2, h3{
+.pedidos h1 h2 h3{
     color: var(--oscuro);
 }
 

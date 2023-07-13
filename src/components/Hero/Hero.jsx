@@ -5,7 +5,7 @@ import "./Hero.css";
 function Hero() {
   return (
     <div className='fondo-hero'>
-    <section className="header-container">
+    <section className="hero-container">
       <div className= "hero-page">
         <h1>Bienvenidos</h1>
         <br />
