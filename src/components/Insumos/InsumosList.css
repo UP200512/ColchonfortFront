@@ -17,3 +17,13 @@
   .cont-padre{
     display: inline-block;
   }
+
+  /*Diseño de tabla*/
+
+
+  .tabla{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+  }
