@@ -8,7 +8,7 @@ const Pedidos = () => {
   const [total, setTotal] = useState(0);
   const [pedidoInput, setPedidoInput] = useState("");
   const [productos, setProductos] = useState([]);
-  const [mesa, setMesa] = useState(0);
+  const [mesa, setMesa] = useState(0);  
   const [insertedIdPedidos, setInsertedIdPedidos] = useState(0);
   useEffect(() => {
     // console.log("InsertedIdPedidos: " + insertedIdPedidos);
@@ -137,29 +137,28 @@ const Pedidos = () => {
   };
 
   return (
-    <div>
-      <h1 style={{ color: "aliceblue" }}>Pedidos</h1>
+    <div className="ContainerPedidos">
 
       <form className="pedidos" onSubmit={(e) => handleSubmit(e)}>
+        <div className="Num-Mesa">
         <h2>Pedidos de la mesa</h2>
         <label htmlFor="input_mesa">No. de mesa </label>
         <br />
         <input
           id="input_mesa"
-          placeholder="Numero de mesa"
+          placeholder="Numero"
           type="number"
           onChange={(e) => {
             setMesa(e.target.value);
           }}
           min={0}
-          style={{
-            width: 100,
-            // height: 100,
-            // backgroundColor: 'skyblue',
-          }}
+          
         />
+          
+        </div>
         <br />
-        <br />
+
+        <div className="Buscar-Productos">
         <label htmlFor="input_buscar">Buscar Producto</label>
         <input
           id="input_buscar"
@@ -172,6 +171,7 @@ const Pedidos = () => {
             // console.log(pedidoInput);
           }}
         />
+        </div>
         <h3>
           Número de órdenes: <span>{total}</span>
         </h3>

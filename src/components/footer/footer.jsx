@@ -8,7 +8,7 @@ function Footer(){
         <footer className="wrap-footer">
             <section className="info ">
                 <div className="networks">
-                <p>Aqui va facebook</p>
+                
                 <a href="https://web.facebook.com/CrazyFryer/?_rdc=1&_rdr">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -25,14 +25,14 @@ function Footer(){
                     </svg>
                 </a>
 
-                <p>crazyfryer2020@gmail.com</p>
+                <a href="mailto:crazyfryer2020@gmail.com">crazyfryer2020@gmail.com</a>
                 
                 </div>
                 <div className='general'>
                     <p>info del lugar</p>
                 </div>
                 <div className="otros">
-                    <p>otros</p>
+                    <p>Al ingresar a Crazy Fryer, serás recibido por una decoración animada y colorida, con murales de arte urbano que adornan las paredes. El ambiente es alegre y enérgico, con música animada y un personal amable que te hará sentir como en casa.</p>
                 </div>
             </section>
         </footer>

@@ -1,102 +1,104 @@
-:root{
+:root {
     --blanco: #ffffff;
-    --oscuro: #212121;
+    --oscuro: #000000;
     --primario: #FFC260;
-    --secundario: #0097A7;
+    --secundario: #FFD700;
     --gris: #757575;
-    --grisClaro: #DFE9F3; 
+    --grisClaro: #DFE9F3;
+  }
 
-}
+  .ContainerPedidos{
+    /* background-color: ; */
+  }
+  
+  #input_mesa{
+    
+    width: 12%;
+  }
 
-.already {
+  .Buscar-Productos{
+    margin-bottom: 3px;
+  }
+
+  .Buscar-Productos label{
+    margin: 10px;
+  }
+  .already {
     background-color: #7dd99c;
-}
-.nuevosProductos{
-    background-color: #0e1534;
+  }
+  
+  .nuevosProductos {
+    background-color: #000;
     color: #fff;
-}
-
-input {
+  }
+  
+  input {
     width: 70%;
     padding: 10px;
-}
-
-/* button {
-    width: 20%;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    background-color: #000;
-    transition: background-color .5s;
+  }
+  
+  button:hover {
+    background-color: #FFD700;
     color: #fff;
-} */
-
-button:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-ul {
+  }
+  
+  ul {
     text-align: left;
-}
-
-ul li {
+  }
+  
+  ul li {
     border-bottom: 1px dashed #333;
     margin: 8px 0;
-}
-
-.pedidos span {
+  }
+  
+  .pedidos span {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 3%;
+    height: 3%;
+    
     background-color: firebrick;
     border-radius: 100%;
     text-align: center;
     color: var(--blanco);
     margin: 0 10px;
     cursor: pointer;
-}
-
-.pedidos span:hover {
+  }
+  
+  .pedidos span:hover {
     background-color: darkred;
-}
-
-
-.pedidos h1{
-    text-align: center;
-}
-
-.pedidos h1 h2 h3{
+  }
+  
+  .pedidos h1,
+  .pedidos h2,
+  .pedidos h3 {
     color: var(--oscuro);
-}
-
-/* pedidos */
-
-.pedidos{
-    background-color: var(--grisClaro);
-    width: min( 60rem, 80%); 
-    margin:  0 auto; 
+  }
+  
+  .pedidos {
+    background-color: var(--amarillo);
+    width: min(60rem, 80%);
+    margin: 0 auto;
     padding: 2rem;
     border-radius: 1rem;
     align-items: center;
     text-align: center;
     border: 1px solid #000;
-}
-
-
-.alinear-derecha{
-    justify-content: end;
-}
-
-.w-sh-100{
+  }
+  
+  .alinear-derecha {
+    justify-content: flex-end;
+  }
+  
+  .w-sh-100 {
     width: 100%;
-}
-
-@media (min-width: 760px)  {
-     .w-sh-100{
-        width: auto;
-
-     }
-}
+    background-color: var(--primario);
+    border-radius: 1px;
+  }
+  
+  @media (min-width: 760px) {
+    .w-sh-100 {
+      width: auto;
+    }
+  }
+  
+  

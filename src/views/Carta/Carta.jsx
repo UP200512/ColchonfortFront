@@ -6,6 +6,7 @@ import Container from '../../components/Card_container/Card_Container.jsx';
 function Carta(){
     return(
         <>
+        
         <Container/>
     </>
 

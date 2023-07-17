@@ -28,7 +28,7 @@ function Header() {
                   <a href='/Estadisticas'>Estadisticas</a>
                   <a href='/Pedidos'> Pedidos</a>
                 </li>
-              ))
+              
             </ul>
           </nav>
         </div>

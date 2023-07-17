@@ -8,6 +8,9 @@
   .wrap-footer{
     background-color: var(--main-c);
     padding: 2rem 0;
+    -webkit-box-shadow: 1px 1px 70px 3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 1px 1px 70px 3px rgba(0,0,0,0.59);
+    box-shadow: 1px 1px 70px 3px rgba(0,0,0,0.59);
     
   }
 
@@ -25,7 +28,10 @@
   
 
   .networks{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    font-weight: bolder;
   }
 
   .general{
@@ -33,5 +39,7 @@
   }
 
   .otros{
-    text-align: center;
+    text-align: justify;
+    margin: auto 15px;
+    font-weight: bolder;
   }
