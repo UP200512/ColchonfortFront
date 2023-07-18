@@ -1,20 +1,24 @@
 .cont {
   text-align: center;
-  color: aliceblue;
-  padding: 5px;
-  margin-top: 5px;
-  margin-left: 5px;
-  border-radius: 10%;
+  color: rgb(37, 117, 188);
+  /* padding: 5%; */
+  /* padding: 12px 5px; */
+  margin-top: 1%;
+  margin-left: 1%;
+  border-radius: 7%;
   min-height: 50px;
+  color: aliceblue;
   
   display: inline-block;
-  background: rgb(55, 55, 55);
+  background: rgb(23, 18, 49);
   min-width: 60px;
   width: auto;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .cont-padre{
-  color: aliceblue;
+  text-align: center;
+
   display: inline-block;
+  /* justify-content: space-around; */
 }

@@ -4,12 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import NuevoProductoDetalle from '../Productos/NuevoProductoDetalle';
 
-function OpcionesPedidos() {
+function OpcionesProductosDetalle() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary" sticky="top"   >
       <Container fluid>
-        <Navbar.Brand href="/pedidos">Pedidos</Navbar.Brand>
+        <Navbar.Brand href="#">Insumos</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,11 +18,13 @@ function OpcionesPedidos() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/pedidos" >Activos</Nav.Link>
-            <Nav.Link href="/pedidos/nuevo">Nuevo</Nav.Link>
+            <Nav.Link href="#action1">Activos</Nav.Link>
+            <Nav.Link href="#action2">Lista de Tabla</Nav.Link>
             
-            <Nav.Link href="#">
-              Vista de Tabla
+      
+            <NuevoProductoDetalle/>
+            <Nav.Link href="#" disabled>
+              Link
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -39,4 +42,4 @@ function OpcionesPedidos() {
   );
 }
 
-export default OpcionesPedidos;
+export default OpcionesProductosDetalle;
