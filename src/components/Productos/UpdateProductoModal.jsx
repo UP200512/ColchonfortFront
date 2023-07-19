@@ -82,11 +82,10 @@ function UpdateProductoModal(props) {
                             required
                             defaultValue={-1}
                             aria-label="tipo_de_producto"
-                            value={tipo}
                             onChange={(e) => setTipo(e.target.value)}
                         >
                             <option value={-1} disabled>
-                                Selecciona un tipo de producto
+                                {tipo}
                             </option>
                             {tipoproducto.map((tipo) => (
                                 <option key={tipo.id_tipo_prod} value={tipo.id_tipo_prod}>

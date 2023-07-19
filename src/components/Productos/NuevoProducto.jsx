@@ -15,7 +15,7 @@ function NuevoProducto() {
       .then((tipoProducto) => setTipoProducto(tipoProducto));
   }, []);
 
-  // console.log(tipoInsumo)
+  console.log("los tipos de producto son :" + tipoProducto);
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
