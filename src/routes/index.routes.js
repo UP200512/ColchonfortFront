@@ -7,7 +7,7 @@ import PedidosPage from "../views/Pedidos/PedidosPage.jsx";
 import InsumosPage from "../views/Insumos/InsumosPage.jsx";
 import PedidosNuevo from "../views/Pedidos/PedidosNuevos.jsx";
 import PedidosDetalles from "../views/Pedidos/PedidosDetalles.jsx";
-
+import PersonalizarCuenta from "../views/Pedidos/PersonalisarCuenta.jsx";
 
 function Autho() {
   return (
@@ -21,6 +21,7 @@ function Autho() {
         <Route path="/Pedidos" element={<PedidosPage/>}></Route>
         <Route path="/Pedidos/nuevo" element={<PedidosNuevo/>}></Route>
         <Route path="/Pedidos/detalles/:id" element={<PedidosDetalles/>}></Route>
+        <Route path="/Pedidos/cuenta/:id" element={<PersonalizarCuenta/>}></Route>
         <Route
           path="/*"
           element={

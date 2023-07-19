@@ -58,7 +58,7 @@ const Detalles = () => {
         alert("no fue posible hacer el registro del pedido");
       }
     });
-    if (rows) window.location.replace("/pedidos");
+    // if (rows) window.location.replace("/pedidos");
   }, [insertedIdPedidos]);
 
   useEffect(() => {}, [pedidos]);
@@ -67,7 +67,6 @@ const Detalles = () => {
   useEffect(() => {
     buscarProduto();
   }, [pedidoInput]);
-
   //funcion para hacer el registro del pedido
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -128,7 +127,6 @@ const Detalles = () => {
       }
     }
 
-    // console.log(pedidos);
   }
   function createAlready(NewPedido) {
     if (alredyInserted.length === 0) {
@@ -203,8 +201,8 @@ const Detalles = () => {
   };
 
   return (
-    <div>
-      <h1 style={{ color: "aliceblue" }}>Pedidos</h1>
+    <div style={{textAlign: "center"}} >
+      <h1 style={{ color: "", textAlign: "center"}}>Pedidos</h1>
 
       <form className="pedidos" onSubmit={(e) => handleSubmit(e)}>
         <h2>Pedidos de la mesa</h2>
@@ -215,14 +213,13 @@ const Detalles = () => {
           placeholder="Numero de mesa"
           type="number"
           value={mesa}
+          disabled
           onChange={(e) => {
             setMesa(e.target.value);
           }}
           min={0}
           style={{
-            width: 100,
-            // height: 100,
-            // backgroundColor: 'skyblue',
+            width: 100
           }}
         />
         <br />
@@ -235,13 +232,8 @@ const Detalles = () => {
           onChange={(e) => {
             setPedidoInput(e.target.value);
             e.preventDefault();
-            // console.log(e.target.value);
-            // console.log(pedidoInput);
           }}
         />
-        {/* <h3>
-          Número de órdenes: <span>{total}</span>
-        </h3> */}
         <div className="already">
           <label>Agregados previamente</label>
           <AlreadyAgregados

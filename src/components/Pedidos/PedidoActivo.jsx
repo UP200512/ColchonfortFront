@@ -14,6 +14,7 @@ export function PedidosActivos(props) {
             <h3>Activo</h3>
           </div>
         <button onClick={()=>window.location.href="/pedidos/detalles/" + id_pedido } >Detalles</button>
+        <button onClick={()=>window.location.href="/pedidos/cuenta/" + id_pedido } >Cuenta</button>
       </div>
   );
 }
