@@ -11,10 +11,10 @@ function HomePage() {
 
   return (
     <>
-      <Header/>
+      
       <Hero/>
       <Container/>
-      <Footer/>
+      
     </>
         
      
