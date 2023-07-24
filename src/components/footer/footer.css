@@ -23,6 +23,7 @@
             grid-template-columns: repeat(3, 1fr); 
             column-gap: 1.2rem;
         }
+
     }
     
   
@@ -32,6 +33,17 @@
     flex-direction: column;
     text-align: center;
     font-weight: bolder;
+    gap: 12px;
+  }
+  @media (max-width: 759px)  {
+       .networks{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       }
+       .Correo_Crazy a{
+        
+       }
   }
 
   .general{

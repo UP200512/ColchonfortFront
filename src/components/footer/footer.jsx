@@ -25,7 +25,7 @@ function Footer(){
                     </svg>
                 </a>
 
-                <a href="mailto:crazyfryer2020@gmail.com">crazyfryer2020@gmail.com</a>
+                <a className="Correo_Crazy" href="mailto:crazyfryer2020@gmail.com">crazyfryer2020@gmail.com</a>
                 
                 </div>
                 <div className='general'>

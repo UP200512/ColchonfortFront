@@ -6,6 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div className='App'>

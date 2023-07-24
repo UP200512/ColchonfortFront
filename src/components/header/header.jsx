@@ -23,7 +23,7 @@ function Header() {
             <ul className="main-menu">
               
                 <li className="menu-item"> {/**key para asigar un identificador unico que en este caso seria index */}
-                  
+              
                   <a href='/Carta'> Carta</a>
                   <a href='/Estadisticas'>Estadisticas</a>
                   <a href='/Pedidos'> Pedidos</a>

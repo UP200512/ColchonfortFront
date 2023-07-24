@@ -5,6 +5,8 @@
     --secundario: #FFD700;
     --gris: #757575;
     --grisClaro: #DFE9F3;
+    --rojoClaro: firebrick;
+    --rojoOscuro: darkred;
   }
 
   .ContainerPedidos{
@@ -56,7 +58,7 @@
     width: 3%;
     height: 3%;
     
-    background-color: firebrick;
+    background-color: var(--rojoClaro);
     border-radius: 100%;
     text-align: center;
     color: var(--blanco);
@@ -65,7 +67,7 @@
   }
   
   .pedidos span:hover {
-    background-color: darkred;
+    background-color: var(--rojoOscuro);
   }
   
   .pedidos h1,

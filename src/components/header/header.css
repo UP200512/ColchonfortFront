@@ -47,6 +47,7 @@ header.main-header{
 
 ul.main-menu{
   display: flex;
+  
   width: 100%;
   z-index: 99;
   margin: 0;
@@ -88,11 +89,7 @@ li.menu-item a:hover{
 
 
 
-menu-item a:visited {
-  color: #000000;
-  text-decoration: underline;
-  
-}
+
 /*prueba final*/
 i.toggle-menu img{
   width: 27px;
@@ -147,6 +144,7 @@ input#check{
 
   i.toggle-menu{
       display: flex;
+      background-color: none;
   }
 
   ul.main-menu, #nav-main-contac{

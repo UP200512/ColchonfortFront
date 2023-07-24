@@ -1,16 +1,19 @@
 import React from "react";
 import Pedidos from "../../components/Pedidos/Pedidos.jsx";
 import OpcionesPedidos from "../../components/Opciones_Pedidos/OpcionesPedidos.jsx";
+import "./PedidosPage.css";
 
 function PedidosNuevo() {
   return (
-    <div className="pedidospage">
+    <>
+    <div className="pedidos-page">
     
       <OpcionesPedidos/>
       <Pedidos/>
-
-
     </div>
+
+    
+    </>
   );
 }
 
