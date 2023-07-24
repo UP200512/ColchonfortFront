@@ -26,7 +26,9 @@ function PedidosList() {
             pedidos.map((pedido) =>(
                <div key={pedido.id_pedido} className="cont" > 
                   <PedidosActivos 
+
                   id_pedido={ pedido.id_pedido} fecha = {pedido.fecha} total={pedido.total} activo={pedido.activo} mesa = {pedido.mesa}
+
                   />
               </div>
             ))
