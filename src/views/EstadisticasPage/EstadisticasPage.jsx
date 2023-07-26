@@ -1,13 +1,12 @@
 import React from 'react'
+import RecentOrders from '../../components/DashBoard/RecentOrders'
 import Estadisticas from '../../components/DashBoard/Estadisticas'
-import CardBase from '../../components/DashBoard/CardBase'
 
 function EstadisticasPage() {
   return (
     <div>
         <Estadisticas/>
-        <CardBase/>
-
+        <RecentOrders/>
         
     </div>
   )
