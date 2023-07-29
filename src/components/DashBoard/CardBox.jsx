@@ -9,7 +9,7 @@ const CardBox = ({ cardData }) => {
       {cardData.map((card, index) => (
         <div className="card" key={index}>
           <div>
-            <div className="numbers">{card.numbers}</div>
+            <div className="numbers">{card.main}</div>
             <div className="cardName">{card.cardName}</div>
           </div>
           <div className="iconBx">

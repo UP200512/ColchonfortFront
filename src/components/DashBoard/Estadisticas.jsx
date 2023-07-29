@@ -4,24 +4,20 @@ import CardBox from './CardBox';
 const Estadisticas = () => {
   const cardData = [
     {
-      numbers: '1,504',
-      cardName: 'Vendido',
-      iconName: 'eye-outline'
-    },
-    {
-      numbers: 'chela',
+      main: 'Chela',
       cardName: 'El mas vendido',
-      iconName: 'cart-outline'
     },
     {
-      numbers: '284',
-      cardName: 'Comments',
-      iconName: 'chatbubbles-outline'
+      main: '$60',
+      cardName: 'Precio'
     },
     {
-      numbers: '$7,842',
-      cardName: 'Ventas',
-      iconName: 'cash-outline'
+      main: '652',
+      cardName: 'Ventas'
+    },
+    {
+      main: '$44,600',
+      cardName: 'Ingresos'
     },
   ];
 

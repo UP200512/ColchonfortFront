@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "../views/Home/HomePage.jsx";
 import  Carta  from "../views/Carta/Carta.jsx";
 import PedidosPage from "../views/Pedidos/PedidosPage.jsx";
