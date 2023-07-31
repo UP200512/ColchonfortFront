@@ -16,9 +16,9 @@ function TarjetaRest(props) {
                     <div className="precio_tarjeta-rest">
                         <span>{valor}</span>
                     </div>
-                    <div className="cta_tarjeta-rest">
+                    {/* <div className="cta_tarjeta-rest">
                         <a href=".">Pedir ahora</a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
