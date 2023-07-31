@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import RowTableProductos from './RowTableProductos';
-
 const CartaTabla = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-    fetch('http://localhost:3000/api/productos')
+    fetch('http://localhost:3001/api/productos')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.log(error));
@@ -22,7 +21,7 @@ const CartaTabla = () => {
           <h2>Productos</h2>
         </div>
         <div class="overflow-scroll">
-          <table width={"1000"} class="table table-striped table-bordered align-middle tabla_busqueda">
+          <table WIDTH="1000" class="table table-striped table-bordered align-middle tabla_busqueda">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -31,13 +30,12 @@ const CartaTabla = () => {
                 <th scope="col">Precio</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Prioridad</th>
-                <th scope="col" colSpan={3}>Acciones</th>
+                <th scope="col" colspan="2">Acciones</th>
               </tr>
             </thead>
             <tbody>
               {data.map(item => (
                 <RowTableProductos 
-                key={item.id_producto}
                 id_producto={item.id_producto}
                 nombre= {item.nombre}
                 descripcion= {item.descripcion}

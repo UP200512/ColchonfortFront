@@ -12,9 +12,9 @@ const Pedidos = () => {
   const [insertedIdPedidos, setInsertedIdPedidos] = useState(0);
   useEffect(() => {
     // console.log("InsertedIdPedidos: " + insertedIdPedidos);
-    let rows=false;
+    let rows = false;
     pedidos.map((ped) => {
-      rows=true;
+      rows = true;
       const jsonPedidos = {
         id_pedido: insertedIdPedidos,
         id_producto: ped.id_producto,
@@ -36,7 +36,7 @@ const Pedidos = () => {
         alert("no fue posible hacer el registro del pedido");
       }
     });
-    if(rows) window.location.replace("/pedidos");
+    if (rows) window.location.replace("/pedidos");
   }, [insertedIdPedidos]);
 
   useEffect(() => {}, [pedidos]);
@@ -50,7 +50,7 @@ const Pedidos = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if ((pedidos.length === 0) || (mesa === 0)) {
+    if (pedidos.length === 0 || mesa === 0) {
       alert(
         "Agrega primero un producto y asegúrate de colocar el número de mesa"
       );
@@ -74,16 +74,6 @@ const Pedidos = () => {
         }
       }
     }
-
-    // fetch("http://localhost:3000/api/pedidos", {
-    //   method: "POST",
-    //   body: JSON.stringify({ mesa: mesa }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((resjson) => console.log(resjson.insertId));
-
-    // console.log(pedidos);
-    // console.log(mesa);
   };
 
   //funcion para pasarla a cada elemento de la lista para agregar un producto al pedido
@@ -172,25 +162,38 @@ const Pedidos = () => {
             // console.log(pedidoInput);
           }}
         />
-        <h3>
-          Número de órdenes: <span>{total}</span>
-        </h3>
-        <ProdcutosAgregados
-          pedidos={pedidos}
-          eliminarPedido={eliminarPedido}
-          restarProducto={restarProducto}
-          createPedido={createPedido}
-        />
+        <br /> <br />
+        <div
+          className="nuevosProductos"
+          style={{
+            textAlign: "center",
+            display: "flex",
+            maxWidth: "100vw", // Agregamos esta línea para limitar el ancho del div
+          }}
+        >
+          <ProdcutosAgregados
+            key={2}
+            pedidos={pedidos}
+            eliminarPedido={eliminarPedido}
+            restarProducto={restarProducto}
+            createPedido={createPedido}
+            style={{ flex: "0 0 50%" }}
+          />
+          <ProductoBuscado
+            productos={productos}
+            // pedidos={pedidos}
+            createPedido={createPedido}
+            style={{ flex: "0 0 50%" }}
+          />
+        </div>
         <div className="alinear-derecha">
-          <input className="boton w-sh-100" type="submit" value="Enviar" />
+          <input
+            className="button btn btn-primary"
+            type="submit"
+            value="Enviar"
+          />
         </div>
       </form>
-      <h1>Coincidencias</h1>
-      <ProductoBuscado
-        productos={productos}
-        // pedidos={pedidos}
-        createPedido={createPedido}
-      />
     </div>
   );
 };

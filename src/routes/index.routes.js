@@ -8,10 +8,12 @@ import InsumosPage from "../views/Insumos/InsumosPage.jsx";
 import PedidosNuevo from "../views/Pedidos/PedidosNuevos.jsx";
 import PedidosDetalles from "../views/Pedidos/PedidosDetalles.jsx";
 import PersonalizarCuenta from "../views/Pedidos/PersonalisarCuenta.jsx";
-
+import Header from "../components/header/header.jsx";
+import Footer from "../components/footer/footer.jsx";
 function Autho() {
   return (
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/insumos" element={<InsumosPage/>}></Route>
@@ -29,6 +31,7 @@ function Autho() {
           }
         ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

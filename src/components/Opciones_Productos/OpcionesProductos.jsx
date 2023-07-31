@@ -5,16 +5,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NuevoProducto from '../Productos/NuevoProducto';
 import { useContext } from 'react';
-import { SearchContext } from '../../views/Carta/CartaTabla';
+// import { SearchContext } from '../../views/Carta/CartaTabla';
 
 
 function OpcionesProductos() {
   
-  const { search, updateSearch } = useContext(SearchContext);
+  // const { search, updateSearch } = useContext(SearchContext);
 
-  const onSearch = (text)=>{
-    updateSearch(text);
-  }
+  // const onSearch = (text)=>{
+  //   updateSearch(text);
+  // }
   return (
     <Navbar expand="sm" className="bg-body-tertiary" sticky="top"   >
       <Container fluid>
@@ -35,12 +35,12 @@ function OpcionesProductos() {
           </Nav>
           <Form className="d-flex">
             <Form.Control
-            value={search}
+            
               type="search"
               placeholder="Buscar"
               className="me-2"
               aria-label="Search"
-              onChange={(e)=>{updateSearch(e.target.value)}}
+              
             />
           </Form>
         </Navbar.Collapse>
