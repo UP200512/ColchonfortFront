@@ -16,9 +16,9 @@ const ProductoBuscado = ({ productos, createPedido }) => {
         </tr>
       </thead>
       <tbody>
-        {productos.map((item) => {
+        {productos.map((item, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{item.nombre}</td>
               <td>{item.precio}</td>
               <td>

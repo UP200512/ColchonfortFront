@@ -170,77 +170,78 @@ const Detalles = () => {
   };
 
   return (
-    <div className="detalles" style={{ textAlign: "center" }}>
-      <form className="pedidos" onSubmit={(e) => handleSubmit(e)}>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-12 detalles text-white text-center">
+          <form className="pedidos" onSubmit={(e) => handleSubmit(e)}>
 
-        <label htmlFor="input_mesa" style={{ marginRight: '10px' }}>No. de mesa </label>
+            <label htmlFor="input_mesa" style={{ marginRight: '10px' }}>No. de mesa </label>
 
-        <input
-          id="input_mesa"
-          placeholder="Numero de mesa"
-          type="number" value={mesa} disabledonChange={(e) => {
-            setMesa(e.target.value);
-          }}
-          min={0}
-          style={{ padding: "10px", marginBlockEnd: "10px", width: "70px" }}
-        />
+            <input
+              id="input_mesa"
+              placeholder="Numero de mesa"
+              type="number" value={mesa} disabled onChange={(e) => {
+                setMesa(e.target.value);
+              }}
+              min={0}
+              style={{ padding: "10px", marginBlockEnd: "10px", width: "70px" }}
+            />
 
-        <a className={`btn btn-outline-dark ${!hidden ? 'active' : ' '}`} style={{ marginLeft: "20px" }} onClick={() => setHidden(!hidden)}>Agregados previamente</a> <br />
-        <div style={{ height: "400px", overflowY: "auto" }} className="col-md bg-secondary text-center text-white" hidden={hidden}>
+            <a className={`btn btn-outline-light    ${!hidden ? 'active' : ' '}`} style={{ marginLeft: "20px" }} onClick={() => setHidden(!hidden)}>Agregados previamente</a> <br />
+            <div style={{ height: "400px", overflowY: "auto" }} className="col-md bg-secondary text-center text-white" hidden={hidden}>
 
-          <AlreadyAgregados
-            pedidos={alredyInserted}
-            eliminarPedido={eliminarAlready}
-            restarProducto={restarAlready}
-            createPedido={createAlready}
-          />
+              <AlreadyAgregados
+                pedidos={alredyInserted}
+                eliminarPedido={eliminarAlready}
+                restarProducto={restarAlready}
+                createPedido={createAlready}
+              />
+            </div>
+            <label htmlFor="input_buscar" style={{ marginRight: '10px' }}>Buscar Producto</label>
+            <input
+              id="input_buscar" type="text" value={pedidoInput}
+              onChange={(e) => {
+                setPedidoInput(e.target.value);
+                e.preventDefault();
+              }}
+            />
+            <br />
+            <br />
+            <div
+              className="nuevosProductos d-flex flex-wrap justify-content-center"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              <div className="row" style={{ display: "flex", flex: 1 }}>
+                <div className="col-md-5" style={{ flex: "1 1 50%" }}>
+                  <ProductoBuscado
+                    productos={productos}
+                    createPedido={createPedido}
+                  />
+                </div>
+                <div className="col-md-5" style={{ flex: "1 1 50%" }}>
+                  <ProdcutosAgregados
+                    key={2}
+                    pedidos={pedidos}
+                    eliminarPedido={eliminarPedido}
+                    restarProducto={restarProducto}
+                    createPedido={createPedido}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="alinear-derecha">
+              <input
+                className="button btn btn-primary"
+                type="submit"
+                value="Enviar"
+              />
+            </div>
+          </form>
         </div>
-        <label htmlFor="input_buscar" style={{ marginRight: '10px' }}>Buscar Producto</label>
-        <input
-          id="input_buscar"
-          type="text"
-          value={pedidoInput}
-          onChange={(e) => {
-            setPedidoInput(e.target.value);
-            e.preventDefault();
-          }}
-        />
-        <br />
-        <br />
-        <div
-          className="nuevosProductos"
-          style={{
-            textAlign: "center",
-            display: "flex",
-            maxWidth: "100vw", // Agregamos esta línea para limitar el ancho del div
-          }}
-        >
-
-          <ProductoBuscado
-            productos={productos}
-            // pedidos={pedidos}
-            createPedido={createPedido}
-            style={{ flex: "0 0 50%" }}
-          />
-          <ProdcutosAgregados
-            key={2}
-            pedidos={pedidos}
-            eliminarPedido={eliminarPedido}
-            restarProducto={restarProducto}
-            createPedido={createPedido}
-            style={{ flex: "0 0 50%" }}
-          />
-
-        </div>
-
-        <div className="alinear-derecha">
-          <input
-            className="button btn btn-primary"
-            type="submit"
-            value="Enviar"
-          />
-        </div>
-      </form>
+      </div>
     </div>
   );
 };

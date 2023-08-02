@@ -10,14 +10,7 @@ const AlreadyAgregados = () => {
     let usedesign = 0;
     let total = 0;
     return (
-      <div
-        // style={{
-        //   marginBlockEnd: "20px",
-        //   marginBlockStart: "20px",
-        //   marginLeft: "10px",
-        //   marginRight: "10px",
-        // }}
-      >
+      
         <table className="table table-striped table-hover table-dark table-responsive-sm text-center">
           <thead className="sticky-top">
             <tr className="table-secondary">
@@ -55,7 +48,7 @@ const AlreadyAgregados = () => {
             </tr>
           </tbody>
         </table>
-      </div>
+     
     );
   } else {
     return <h4>No hay productos en este pedido</h4>;

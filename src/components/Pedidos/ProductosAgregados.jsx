@@ -23,8 +23,8 @@ const ProdcutosAgregados = ({
         </tr>
       </thead>
       <tbody>
-        {pedidos.map((item) => (
-          <tr>
+        {pedidos.map((item, index) => (
+          <tr key={index}>
             <td>{item.nombre}</td>
             <td>
               <Button

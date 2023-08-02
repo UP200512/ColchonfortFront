@@ -8,10 +8,10 @@ import { CuentasContext } from "./PedidosDetalles";
 
 
 const PersonalizarCuenta = () => {
-  const { Rondas, UpdateRondas } = useContext(CuentasContext)
+  const { Rondas, UpdateRondas,  } = useContext(CuentasContext)
 
   return (
-    <div>
+    
       <div className="container-fluid p-0 text-center" >
 
         <div className="d-flex justify-content-end bg-dark" >
@@ -37,7 +37,7 @@ const PersonalizarCuenta = () => {
           </div>
           <div
             style={{ height: "600px", overflowY: "auto" }}
-            className="col-md text-center bg-info text-white"
+            className="col-md-6 text-center bg-dark text-white"
             hidden={Rondas}
           >
             <AlreadyAgregadosByProduct
@@ -56,8 +56,6 @@ const PersonalizarCuenta = () => {
 
         </div>
       </div>
-
-    </div>
   );
 };
 export default PersonalizarCuenta;

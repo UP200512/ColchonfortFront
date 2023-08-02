@@ -1,7 +1,7 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
-export const downloadPDF = (tabla, cells) => {
+export const downloadPDF = async (tabla, cells, id) => {
   var doc = new jsPDF("p", "cm", [8, 25]);
   // var htmlstring = '';
   doc.setDrawColor(0);
@@ -20,8 +20,8 @@ export const downloadPDF = (tabla, cells) => {
   const fechaYHoraLegible = fechaActual.toLocaleString("es-ES", opciones);
 
   // var tempVarToCheckPageHeight = 0;
-  var pageHeight = 0;
-  pageHeight = doc.internal.pageSize.height;
+  // var pageHeight = 0;
+  // pageHeight = doc.internal.pageSize.height;
 
   doc.margins = {
     top: 0.5,
@@ -30,14 +30,14 @@ export const downloadPDF = (tabla, cells) => {
     right: 0,
     width: 7.4,
   };
-  var y = 20;
+  // var y = 20;
   doc.setLineWidth(2);
   // doc.setFillColor("Gray");
-  
+
   doc.setFontSize(14);
   let header = "Gracias por venir";
-  
-  let fecha = fechaYHoraLegible
+
+  let fecha = fechaYHoraLegible;
 
   doc.text(header, 0.5, 0.5, {
     baseline: "top",
@@ -46,40 +46,44 @@ export const downloadPDF = (tabla, cells) => {
   doc.text(fecha, 0.5, 1.0, {
     baseline: "top",
   });
+  doc.text("Pedido " + id, 0.5, 1.6, {
+    baseline: "top",
+  });
   doc.setFontSize(10);
-  if(cells===5){
-    var cStyles= {
-        0: {
-            cellWidth: 0.1,
-          },
-          1: {
-            cellWidth: 4,
-          },
-          2: {
-            cellWidth: 1,
-          },
-          3: {
-            cellWidth: 1.5,
-          },
-          4: {
-            cellWidth: 1.5,
-          },
-    }
-  }else{
-    var cStyles= {
-        0: {
-            cellWidth: 0.7,
-          },
-          1: {
-            cellWidth: 4,
-          },
-          2: {
-            cellWidth: 1,
-          },
-          3: {
-            cellWidth: 2.5,
-          },
-    }
+  var cStyles = {};
+  if (cells === 5) {
+    cStyles = {
+      0: {
+        cellWidth: 0.1,
+      },
+      1: {
+        cellWidth: 4,
+      },
+      2: {
+        cellWidth: 1,
+      },
+      3: {
+        cellWidth: 1.5,
+      },
+      4: {
+        cellWidth: 1.5,
+      },
+    };
+  } else {
+    cStyles = {
+      0: {
+        cellWidth: 0.7,
+      },
+      1: {
+        cellWidth: 4,
+      },
+      2: {
+        cellWidth: 1,
+      },
+      3: {
+        cellWidth: 2.5,
+      },
+    };
   }
   autoTable(doc, {
     html: "#" + tabla,

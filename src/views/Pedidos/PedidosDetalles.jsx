@@ -9,7 +9,7 @@ export const CuentasContext = createContext();
 
 function PedidosDetalles() {
   const [action, setAction] = useState(true);
-
+  const [Pagados, setPagados] = useState([]);
   const { id } = useParams();
   const url= "/pedidos/detalles/" + id
   const [mesa, setMesa] = useState(0);
@@ -17,6 +17,11 @@ function PedidosDetalles() {
   const [CuentaActiva, setCuentaActiva] = useState([]);
   const [Rondas, setRondas] = useState(false);
   const [nota, setNota] = useState([])
+  const tiposDePagos= [
+    "Efectivo", "Tarjeta de debito", "Tarjeta de crédito",
+    "Vales", "Cortecía de la casa", "Otro"
+  ]
+
 
   const UpdateRondas = (inp) => {
     setRondas(inp);
@@ -46,7 +51,12 @@ function PedidosDetalles() {
       });
   }, [id]);
 
-
+  const ClearNota=()=>{
+    setNota([])
+  }
+  const ClearCuentaActiva=()=>{
+    setCuentaActiva([])
+  }
   const AddProduct = (jsonProduct) => {
     let ifexist = nota.findIndex((p) => p.id_producto === jsonProduct.id_producto);
     let newNota = [...nota]; // Hacemos una copia del arreglo nota
@@ -74,6 +84,33 @@ function PedidosDetalles() {
     }
   };
 
+  const RemoveProduct = (jsonProduct) => {
+    let ifexist = CuentaActiva.findIndex((p) => p.id_producto === jsonProduct.id_producto);
+    let newNota = [...CuentaActiva]; // Hacemos una copia del arreglo nota
+
+    if (ifexist !== -1) {
+      newNota[ifexist].cantidad++;
+    } else {
+      // Si no existe, agregamos el producto con cantidad 1 en nota
+      newNota.push({ ...jsonProduct, cantidad: "1" });
+    }
+
+    setCuentaActiva(newNota); // Actualizamos el arreglo nota
+
+    if (jsonProduct.cantidad === "1" || jsonProduct.cantidad === 1) { // Cambiamos la comparación a jsonProduct.cantidad === "1"
+      // Si la cantidad original era 1, eliminamos el producto de CuentaActiva
+      setNota(nota.filter((p) => p.id_producto !== jsonProduct.id_producto));
+    } else {
+      // Si la cantidad original era mayor a 1, restamos 1 a la cantidad en CuentaActiva
+      let indexToRestar = nota.findIndex((p) => p.id_producto === jsonProduct.id_producto);
+      if (indexToRestar !== -1) {
+        let copia = [...nota]; // Hacemos una copia del arreglo CuentaActiva
+        copia[indexToRestar].cantidad--;
+        setNota(copia); // Actualizamos el arreglo CuentaActiva
+      }
+    }
+  };
+
   const UpdateAction = (newAction) => {
     setAction(newAction);
   }
@@ -81,7 +118,7 @@ function PedidosDetalles() {
 
 
   return (
-    <CuentasContext.Provider value={{ CuentaActiva, alredyInserted, nota, AddProduct, mesa, Rondas, UpdateRondas, action, UpdateAction }} >
+    <CuentasContext.Provider value={{ tiposDePagos, ClearNota, ClearCuentaActiva, CuentaActiva, alredyInserted, nota, RemoveProduct, AddProduct, mesa, Rondas, UpdateRondas, action, UpdateAction, id }} >
       <div className="pedidospage  bg-dark" style={{width: '100%'}}>
         
         <OpcionesPedidos />

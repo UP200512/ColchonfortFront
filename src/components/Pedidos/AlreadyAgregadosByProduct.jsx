@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CuentasContext } from "../../views/Pedidos/PedidosDetalles";
 import { BsFillFilePlusFill } from 'react-icons/bs';
 import { downloadPDF } from "./ticket";
+import { PagarSeleccionados } from "./fetch";
 
 const AlreadyAgregadosByProduct = () => {
 
-  const { CuentaActiva, AddProduct } = useContext(CuentasContext)
-
+  const { CuentaActiva, AddProduct, id, tiposDePagos, ClearCuentaActiva } = useContext(CuentasContext)
+  const [metodo, setMetodo] = useState("Efectivo");
   // console.log(pedidos)
   if (CuentaActiva.length > 0) {
     let total = 0;
@@ -17,11 +18,28 @@ const AlreadyAgregadosByProduct = () => {
           marginRight: "10px",
         }}
       >
+        <table style={{ width: "100%" }}>
+          <thead className="table table-striped table-hover table-dark table-responsive-sm text-center sticky-top">
+            <tr>
+              <th><h2>Cuenta por productos</h2></th>
+              <th>
+                <label htmlFor="tiposDePagos">Método de pago</label>
+                <select className="form-select" name="tiposDePagos" id="tiposDePagos" value={metodo} onChange={(e) => setMetodo(e.target.value)}>
+                  {/* <option value="" disabled hidden  >Método de pago</option> */}
+                  {tiposDePagos.map((tipo, index) => {
+                    return (
+                      <option key={index} value={tipo}>{tipo}</option>
+                    )
+                  })}
+
+                </select>
+              </th>
+            </tr>
+          </thead>
+        </table>
         <table className="table table-striped table-hover table-dark table-responsive-sm text-center" id="by_product">
           <thead className="sticky-top" >
-            <tr className="table-secondary">
-              <th colSpan={5}>Cuenta por productos</th>
-            </tr>
+           
             <tr>
               <th></th>
               <th>Nombre</th>
@@ -57,7 +75,23 @@ const AlreadyAgregadosByProduct = () => {
             </tr>
           </tbody>
         </table>
-        <button className="btn btn-dark" onClick={() => downloadPDF('by_product', 5) } >Ticket</button>
+        <button className="btn btn-dark" onClick={async () => {
+          if (window.confirm("Usted pagará $" + total + " pesos\nAl aceptar, se registrarán pagados los productos en esta lista y se imprimirá una nota de pago")) {
+            // console.log(CuentaActiva)
+            const response = await PagarSeleccionados(id, CuentaActiva, metodo)
+            // console.log(response.serverStatus)
+            if (response.serverStatus === 2) {
+              // console.log(afectedRows.afectedRows)
+              window.alert("Se registró con éxito el pago")
+              await downloadPDF('by_product', 5, id)
+              ClearCuentaActiva()
+            } else alert("No fue posible registrar el pago, inetentelo en unos momentos")
+
+          } else {
+            alert("Cancelando...")
+          }
+
+        }} >Ticket</button>
       </div>
     );
   } else {

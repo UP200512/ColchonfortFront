@@ -5,9 +5,11 @@ import ProdcutosAgregados from "./ProductosAgregados";
 
 const Pedidos = () => {
   const [pedidos, setPedidos] = useState([]);
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
   const [pedidoInput, setPedidoInput] = useState("");
   const [productos, setProductos] = useState([]);
+  const [productosCopia, setProductosCopia] = useState([]);
+
   const [mesa, setMesa] = useState(0);
   const [insertedIdPedidos, setInsertedIdPedidos] = useState(0);
   useEffect(() => {
@@ -39,9 +41,21 @@ const Pedidos = () => {
     if (rows) window.location.replace("/pedidos");
   }, [insertedIdPedidos]);
 
-  useEffect(() => {}, [pedidos]);
+  useEffect(() => { }, [pedidos]);
 
-  useEffect(() => {}, [productos]);
+  useEffect(() => {
+
+    fetch("http://localhost:3000/api/productos/" + pedidoInput)
+      .then((res) => res.json())
+      .then((productos) => {
+        setProductos(productos)
+        setProductosCopia(productos)
+      })
+      .catch((error) => {
+        alert("No fue posible consultar la base de datos, revisa tu conexión a internet, si persisten los problemas contacta a tu técnico")
+        console.log(error)
+      });
+  }, []);
   useEffect(() => {
     buscarProduto();
   }, [pedidoInput]);
@@ -119,19 +133,18 @@ const Pedidos = () => {
     }
   };
   const buscarProduto = () => {
-    // e.preventDefault();
-    fetch("http://localhost:3000/api/productos/" + pedidoInput)
-      .then((res) => res.json())
-      .then((productos) => setProductos(productos));
-    // console.log(productos);
+
+    setProductosCopia(productos.filter((product) => {
+      return (product.nombre.toLowerCase().includes(pedidoInput.toLowerCase()))
+    }))
   };
 
   return (
-    <div>
+    <div className="container-fluid p-0 text-center bg-dark text-white" >
       <h1 style={{ color: "aliceblue" }}>Pedidos</h1>
 
       <form className="pedidos" onSubmit={(e) => handleSubmit(e)}>
-        <h2>Pedidos de la mesa</h2>
+
         <label htmlFor="input_mesa">No. de mesa </label>
         <br />
         <input
@@ -163,28 +176,32 @@ const Pedidos = () => {
           }}
         />
         <br /> <br />
-        <div
-          className="nuevosProductos"
-          style={{
-            textAlign: "center",
-            display: "flex",
-            maxWidth: "100vw", // Agregamos esta línea para limitar el ancho del div
-          }}
-        >
-          <ProdcutosAgregados
-            key={2}
-            pedidos={pedidos}
-            eliminarPedido={eliminarPedido}
-            restarProducto={restarProducto}
-            createPedido={createPedido}
-            style={{ flex: "0 0 50%" }}
-          />
-          <ProductoBuscado
-            productos={productos}
-            // pedidos={pedidos}
-            createPedido={createPedido}
-            style={{ flex: "0 0 50%" }}
-          />
+        <div className="row">
+          <div
+            style={{ height: "600px", overflowY: "auto" }}
+            className="col-md-6 text-center bg-dark text-white"
+          >
+            <ProdcutosAgregados
+              key={2}
+              pedidos={pedidos}
+              eliminarPedido={eliminarPedido}
+              restarProducto={restarProducto}
+              createPedido={createPedido}
+              style={{ flex: "0 0 50%" }}
+            />
+          </div>
+
+          <div
+            style={{ height: "600px", overflowY: "auto" }}
+            className="col-md-6 text-center bg-dark text-white"
+          >
+            <ProductoBuscado
+              productos={productosCopia}
+              // pedidos={pedidos}
+              createPedido={createPedido}
+              style={{ flex: "0 0 50%" }}
+            />
+          </div>
         </div>
         <div className="alinear-derecha">
           <input
