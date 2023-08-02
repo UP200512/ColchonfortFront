@@ -10,7 +10,7 @@ function OpcionesProductos() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary" sticky="top"   >
       <Container fluid>
-        <Navbar.Brand href="#">Insumos</Navbar.Brand>
+        <Navbar.Brand href="#">Pedidos</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,11 +20,10 @@ function OpcionesProductos() {
           >
             <Nav.Link href="#action1">Activos</Nav.Link>
             <Nav.Link href="#action2">Lista de Tabla</Nav.Link>
-            
-      
+                
             <NuevoProducto/>
-            <Nav.Link href="#" disabled>
-              Link
+            <Nav.Link href="/TablaTipoProducto">
+              Administrar Tipos
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
