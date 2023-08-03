@@ -5,19 +5,19 @@ import  CartaTabla  from "../views/Carta/CartaTabla.jsx";
 import  TablaTipoProducto  from "../views/Carta/TablaTipoProducto.jsx";
 import  CartaTablaDetalle  from "../views/Carta/CartaTablaDetalle.jsx";
 import PedidosPage from "../views/Pedidos/PedidosPage.jsx";
-import InsumosPage from "../views/Insumos/InsumosPage.jsx";
 import PedidosNuevo from "../views/Pedidos/PedidosNuevos.jsx";
 import PedidosDetalles from "../views/Pedidos/PedidosDetalles.jsx";
 import EstadisticasPage from "../views/EstadisticasPage/EstadisticasPage.jsx";import PersonalizarCuenta from "../views/Pedidos/PersonalisarCuenta.jsx";
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
+import InsumosGlobal from "../views/Insumos/InsumosGlobal.jsx";
 function Autho() {
   return (
     <BrowserRouter>
-    <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
-        <Route path="/insumos" element={<InsumosPage/>}></Route>
+        <Route path="/insumos/:variante" element={<InsumosGlobal/>}></Route>
         <Route path="/Carta" element={<Carta/>}></Route>
         <Route path="/CartaTabla" element={<CartaTabla/>}></Route>
         <Route path="/TablaTipoProducto" element={<TablaTipoProducto/>}></Route>

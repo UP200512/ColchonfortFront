@@ -28,7 +28,7 @@ function Header() {
                   <a href='/Carta'> Carta</a>
                   {/* <a href='/Estadisticas'>Estadisticas</a> */}
                   <a href='/Pedidos'> Pedidos</a>
-                  <a href='/insumos'> Insumos</a>
+                  <a href='/insumos/card'> Insumos</a>
                 </li>
               
               </ul>
