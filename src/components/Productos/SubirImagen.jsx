@@ -36,7 +36,7 @@ function SubirImagen({id}) {
     formData.append('id', id);
 
     try {
-      const response = await fetch('http://localhost:3001/api/subirImagen', {
+      const response = await fetch('http://localhost:3000/api/subirImagen', {
         method: 'POST',
         body: formData,
       });
