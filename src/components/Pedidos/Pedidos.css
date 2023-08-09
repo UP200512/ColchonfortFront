@@ -1,0 +1,113 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --primario: #FFC260;
+    --secundario: #FFD700;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+    --rojoClaro: firebrick;
+    --rojoOscuro: darkred;
+  }
+
+  .ContainerPedidos{
+    /* background-color: ; */
+  }
+  
+  #input_mesa{
+    
+    width: 12%;
+  }
+
+  .Buscar-Productos{
+    margin-bottom: 3px;
+  }
+
+  .Buscar-Productos label{
+    margin: 10px;
+  }
+  .already {
+    background-color: #7dd99c;
+  }
+  
+  .nuevosProductos {
+    background-color: #000;
+    color: #fff;
+}
+
+
+.pedidos input {
+
+    width: 70%;
+    padding: 10px;
+  }
+  
+.pedidos   button:hover {
+    background-color: #FFD700;
+    color: #fff;
+}
+
+.pedidos ul {
+    text-align: left;
+}
+
+.pedidos ul, .pedidos li {
+    border-bottom: 1px dashed #333;
+    margin: 8px 0;
+}
+
+.pedidos span {
+    display: inline-block;
+    width: 3%;
+    height: 3%;
+    
+    background-color: var(--rojoClaro);
+    border-radius: 100%;
+    text-align: center;
+    color: var(--blanco);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.pedidos span:hover {
+    background-color: darkred;
+}
+
+
+.pedidos h1{
+    text-align: center;
+}
+
+.pedidos h1, .pedidos h2, .pedidos h3{
+    color: var(--oscuro);
+}
+
+/* pedidos */
+
+.pedidos{
+    /* background-color: var(--grisClaro); */
+    /* width: min( 60rem, 80%);  */
+    margin:  0 auto; 
+    padding: 2rem;
+    border-radius: 1rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000;
+  }
+  
+  .alinear-derecha {
+    justify-content: flex-end;
+  }
+  
+  .w-sh-100 {
+    width: 100%;
+    background-color: var(--primario);
+    border-radius: 1px;
+  }
+  
+  @media (min-width: 760px) {
+    .w-sh-100 {
+      width: auto;
+    }
+  }
+  
+  

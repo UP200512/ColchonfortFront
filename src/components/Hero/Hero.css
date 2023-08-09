@@ -1,0 +1,57 @@
+:root{
+    --main-c: #ffc300;
+    --black-c: #000;
+  
+  }
+
+.fondo-hero{
+    background: linear-gradient(to bottom, rgb(0 0 0/ .75), 
+    rgb(0 0 0 / .5)), url(../../img/restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .hero-container{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-page{
+    color: #fff;
+    text-align: center;
+    width: 50%;
+  }
+  .hero-page p{
+    margin-bottom: 2rem;
+    font-size: x-large;
+   
+  }
+  
+  .hero-page span{
+  text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: var(--main-c);
+  }
+  
+  @media (max-width: 768px)  {
+     .hero-page{
+        width: 100%;
+        padding: 1rem;
+     }
+  }
+  
+
+  /*enlaces y botones*/
+
+  .cta-main{
+    background-color: var(--main-c);
+    padding: 0.5rem;
+    color: #fff;
+    font-size: bold;
+    border-radius: 4px;
+  }
+  
+  
