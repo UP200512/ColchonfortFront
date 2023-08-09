@@ -5,11 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NuevoProducto from '../Productos/NuevoProducto';
 import { useContext } from 'react';
-// import { SearchContext } from '../../views/Carta/CartaTabla';
+import { DataContext } from '../../views/Carta/CartaGlobal';
 
 
 function OpcionesProductos() {
-  
+  const {typing}=useContext(DataContext)
   // const { search, updateSearch } = useContext(SearchContext);
 
   // const onSearch = (text)=>{
@@ -18,7 +18,7 @@ function OpcionesProductos() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary" sticky="top"   >
       <Container fluid>
-        <Navbar.Brand href="#">Pedidos</Navbar.Brand>
+        <Navbar.Brand href="/carta/carta/100">Productos</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -26,11 +26,11 @@ function OpcionesProductos() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Activos</Nav.Link>
-            <Nav.Link href="#action2">Lista de Tabla</Nav.Link>
+            <Nav.Link href="/carta/menu/100">Carta</Nav.Link>
+            <Nav.Link href="/carta/tabla/100">Tabla</Nav.Link>
                 
             <NuevoProducto/>
-            <Nav.Link href="/TablaTipoProducto">
+            <Nav.Link href="/carta/tipos/51">
               Administrar Tipos
             </Nav.Link>
           </Nav>
@@ -41,7 +41,7 @@ function OpcionesProductos() {
               placeholder="Buscar"
               className="me-2"
               aria-label="Search"
-              
+              onChange={(e)=>typing(e)}
             />
           </Form>
         </Navbar.Collapse>

@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import RowTableProductos from './RowTableProductos';
-import SubirImagen from './SubirImagen';
+import { DataContext } from '../../views/Carta/CartaGlobal';
 
 const CartaTabla = () => {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-    fetch('http://localhost:3000/api/productos')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.log(error));
-  }, []);
+  
+  const {data}= useContext(DataContext)
 
-  console.log(data);
   if (data.length > 0) {
   return (
     <React.Fragment>

@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import './Card_Container2.css';
 import TarjetaRest from "../restaurant_card/restaurant_card";
-import imagenSandwich from '../../img/sandwich.jpg';
-import imagenBurritos from '../../img/burrito.jpg';
-import imagenPizza from '../../img/pizza.jpg';
-import imagenEnsalada from '../../img/ensalada.jpg';
+import { DataContext } from "../../views/Carta/CartaGlobal";
 
 
 function Container2() {
 
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-    fetch('http://localhost:3000/api/productos')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.log(error));
-  }, []);
+  const {data}= useContext(DataContext)
 
   return (
     <div>
@@ -28,7 +17,7 @@ function Container2() {
             if (item.prioridad === 2) {
               return (
                 <TarjetaRest
-                  imagen={imagenSandwich}
+                  image={item.imagen}
                   nombre={item.nombre}
                   descripcion={item.descripcion}
                   valor={item.precio}

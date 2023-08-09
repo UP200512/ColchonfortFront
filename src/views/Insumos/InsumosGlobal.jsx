@@ -16,11 +16,11 @@ function InsumosGlobal() {
                 setData(data)
                 setDataFiltered(data)
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error))
         setDataFiltered(data)
     }, []);
     const typing = (e) => {
-        const searchTerm = e.target.value.toLowerCase();
+        const searchTerm = e.target.value.toLowerCase()
         console.log(searchTerm);
         setDataFiltered(data.filter(item => item.nombre.toLowerCase().includes(searchTerm)));
     }

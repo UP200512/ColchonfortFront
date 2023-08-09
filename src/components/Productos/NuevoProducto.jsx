@@ -18,7 +18,7 @@ function NuevoProducto() {
   console.log("los tipos de producto son :" + tipoProducto);
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <Button variant="" onClick={() => setModalShow(true)}>
         Agregar producto
       </Button>
 

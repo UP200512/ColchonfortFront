@@ -1,35 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import './Card_Container.css';
 import TarjetaRest from "../restaurant_card/restaurant_card";
-import imagenSandwich from '../../img/sandwich.jpg';
-import imagenBurritos from '../../img/burrito.jpg';
-import imagenPizza from '../../img/pizza.jpg';
-import imagenEnsalada from '../../img/ensalada.jpg';
+import { DataContext } from "../../views/Carta/CartaGlobal";
+import { DataContextHome } from "../../views/Home/HomePage";
 
 
 function Container() {
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-    fetch('http://localhost:3000/api/productos')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.log(error));
-  }, []);
-
-
+  const {data}= useContext(DataContext) || []
+  const dataHome= useContext(DataContextHome)
+  // console.log("esto tiene data")
   return (
     <div>
       <section class="wrap section">
         <div class="column-4 columns">
 
-          {data.map(item => {
+          {
+          dataHome?.map(item => {
             if (item.prioridad === 1) {
               return (
                 <TarjetaRest
-                  imagen={item.imagen}
+                  image={item.imagen}
                   nombre={item.nombre}
                   descripcion={item.descripcion}
                   valor={item.precio}
@@ -37,6 +27,20 @@ function Container() {
               );
             }
           })}
+          {
+            data?.map(item => {
+              if (item.prioridad === 1) {
+                return (
+                  <TarjetaRest
+                    image={item.imagen}
+                    nombre={item.nombre}
+                    descripcion={item.descripcion}
+                    valor={item.precio}
+                  />
+                );
+              }
+            })
+          }
 
         </div>
       </section>
