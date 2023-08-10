@@ -24,7 +24,7 @@ const RowTableProductos = (props) => {
                 <button type="button" class="btn btn-primary" onClick={() => (window.location.href = `/CartaTablaDetalle/${id_producto}`)}>DETALLES</button>
             </td>
             <td>
-                <Form onSubmit={() => DeleteProducto(id_producto)}>
+                <Form onSubmit={() => DeleteProducto(id_producto, nombre)}>
                     <Form.Group>
                         <Button variant="danger"
                             type="submit"

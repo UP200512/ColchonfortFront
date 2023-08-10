@@ -55,7 +55,7 @@ function UpdateProductoDetalleModal(props) {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="AddInsumoId">
-                        <Form.Label>Producto:</Form.Label>
+                        <Form.Label>Insumo:</Form.Label>
                         <Form.Control
                             required
                             type="text"

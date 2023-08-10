@@ -4,9 +4,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./AddProducto.css";
 import Form from "react-bootstrap/Form";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function UpdateProductoModal(props) {
+function UpdateTipoProductoModal(props) {
 
     const id = props.id;
     const [nombre, setNombre] = useState(props.nombre);
@@ -72,4 +72,4 @@ function UpdateProductoModal(props) {
         </Modal>
     );
 }
-export default UpdateProductoModal;
+export default UpdateTipoProductoModal;

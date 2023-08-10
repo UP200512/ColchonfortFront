@@ -6,7 +6,7 @@ import { Form } from "react-bootstrap";
 import UpdateInsumo from "./UpdateInsumo";
 
 function InsumosIndividual(props) {
-  const { id, nombre, tipo, unidad, descripcion, cantidad, nombre_tipo, nombre_unidad, abreviacion } = props;
+  const { id, nombre, unidad, descripcion, cantidad, nombre_tipo, nombre_unidad, abreviacion } = props;
 
   return (
 
@@ -22,7 +22,7 @@ function InsumosIndividual(props) {
         <h3>Cantidad del insumo: {cantidad + " " + abreviacion }</h3>
 
       </div>
-      <Form onSubmit={() => DeleteInsumo(id)}>
+      <Form onSubmit={() => DeleteInsumo(id, nombre)}>
         <Form.Group>
           <Button variant="danger"
             type="submit"
@@ -33,8 +33,10 @@ function InsumosIndividual(props) {
       <UpdateInsumo 
       nombre={nombre}
       id={id}
-      tipo={tipo}
-      unidad={unidad}
+      tipo={nombre_tipo}
+      nombre_tipo={nombre_tipo}
+      unidad={nombre_unidad}
+      unidad_id={unidad}
       descripcion={descripcion}
       cantidad={cantidad}
       />

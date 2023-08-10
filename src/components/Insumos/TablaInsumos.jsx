@@ -31,6 +31,8 @@ const TablaInsumos = () => {
                 id_insumo = {tipo.id_insumo}
                 nombre = {tipo.nombre}
                 tipo_insumo = {tipo.nombre_tipo}
+                tipo_insumo_id = {tipo.tipo_insumo_id}
+                unidad_id = {tipo.unidad_de_medida_id}
                 unidad_de_medida = {tipo.nombre_unidad}
                 descripcion = {tipo.descripcion}
                 cantidad = {tipo.cantidad}
@@ -44,7 +46,7 @@ const TablaInsumos = () => {
   )}
   else {
     return (
-      <h1>No hay productos</h1>
+      <h1>No hay insumos</h1>
     );
   }
 };

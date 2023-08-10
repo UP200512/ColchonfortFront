@@ -7,9 +7,9 @@ import Modal from "react-bootstrap/Modal";
 import "./AddProducto.css";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
-import SubirImagen from './SubirImagen';
 
 function AddProductoModal(props) {
+    const token = localStorage.getItem('token');
     const { tipoproducto } = props;
     const [nombre, setNombre] = useState("");
     const [tipo, setTipo] = useState(null);
@@ -28,26 +28,7 @@ function AddProductoModal(props) {
     }, [tipoproducto]);
 
 
-    console.log("id nuevo" + nuevo_tipo_id);
-    //console.log(tamanio);
-
-    //const XD = nuevoTipo["id_tipo_prod"];
-
-    console.log("el nuevo tipo_id es: " + nuevo_tipo_id);
-    console.log("el nuevo tipo es: " + nuevo_tipo);
-    //console.log(XD);
-    //console.log("hola");
-    //console.log(tipoproducto[0]);
-
-    //console.log("el tamaño es:" + tipoproducto.length);
-    //const tamanoTipoProducto = tipoproducto.length;
-    //console.log("tamaño tipo producto:" + tamanoTipoProducto);
-
-    //console.log("el tamaño es " + tipoproducto.length);
-
-    //console.log(tipoProductoMaxId.max_id)
-
-    const [insertedProducto, setInserted] = useState({});
+    //const [insertedProducto, setInserted] = useState({});
 
     const [mostrarOtro, setMostrarOtro] = useState(false);
 
@@ -63,17 +44,16 @@ function AddProductoModal(props) {
         };
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify(newProducto),
         };
 
         fetch("http://localhost:3001/api/productos", requestOptions)
             .then((res) => res.json())
-            .then((producto) => setInserted(producto));
-        //console.log(insertedProducto);
-        // .then((data) => console.log(data))
-
-        ////console.log(newProducto);
+        //.then((producto) => setInserted(producto));
     };
 
     return (

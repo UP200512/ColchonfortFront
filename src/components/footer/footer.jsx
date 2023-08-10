@@ -29,7 +29,11 @@ function Footer(){
                 
                 </div>
                 <div className='general'>
-                    <p>info del lugar</p>
+                    <h4>Desarrolladores</h4>
+                    <p>Juan Pablo Rodriguez Serna</p>
+                    <p>Juan José Rojas Cornejo</p>
+                    <p>José Miguel Escalera Ruvalcaba</p>
+                    <p>Daniel Garcia de Luna</p>
                 </div>
                 <div className="otros">
                     <p>Al ingresar a Crazy Fryer, serás recibido por una decoración animada y colorida, con murales de arte urbano que adornan las paredes. El ambiente es alegre y enérgico, con música animada y un personal amable que te hará sentir como en casa.</p>
@@ -41,4 +45,4 @@ function Footer(){
 }
 
 
-export default Footer;
+export default Footer;

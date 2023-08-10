@@ -1,12 +1,9 @@
 import React from "react";
-//import "./InsumosList.css";
-import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-// import AddInsumoModal from "./AddInsumoModal";
-import UpdateProductoModal from "./UpdateTipoProductoModal";
+import UpdateTipoProductoModal from "./UpdateTipoProductoModal";
 
-function UpdateProducto({id, nombre}) {
+function UpdateTipoProducto({id, nombre}) {
   
   const [modalShow, setModalShow] = React.useState(false);
   // console.log(tipoInsumo)
@@ -16,7 +13,7 @@ function UpdateProducto({id, nombre}) {
         ACTUALIZAR
       </Button>
 
-      <UpdateProductoModal
+      <UpdateTipoProductoModal
 
         show={modalShow}
         backdrop="static"
@@ -27,4 +24,4 @@ function UpdateProducto({id, nombre}) {
     </>
   );
 }
-export default UpdateProducto;
+export default UpdateTipoProducto;

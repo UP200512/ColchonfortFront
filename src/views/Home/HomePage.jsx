@@ -2,7 +2,7 @@ import React, {createContext, useState, useEffect} from "react";
 import Hero from "../../components/Hero/Hero.jsx";
 import Container from "../../components/Card_container/Card_Container.jsx";
 import "./HomePage.css";
-
+import { defaultrequestOptions } from "../../data.js";
 export const DataContextHome = createContext()
 function HomePage() {
   // const { variante, id } = useParams();
@@ -11,22 +11,16 @@ function HomePage() {
   const id=100000;
   useEffect(() => {
       // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-      fetch('http://localhost:3000/api/productos')
+      fetch('http://localhost:3000/api/productos', defaultrequestOptions)
           .then(response => response.json())
           .then(data => {
               // setDataOrigin(data)
               setData(data)
               // console.log(data)
+              console.log(defaultrequestOptions)
           })
           .catch(error => console.log(error));
-          
-      // setDataFiltered(dataOrigin)
   }, [id]);
-  // const typing = (e) => {
-  //     const searchTerm = e.target.value.toLowerCase();
-  //     // console.log(searchTerm);
-  //     setDataFiltered(dataOrigin.filter(item => item.nombre.toLowerCase().includes(searchTerm)));
-  // }
   return (
     <DataContextHome.Provider value={data} >
 

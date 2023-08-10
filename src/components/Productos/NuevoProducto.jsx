@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import AddProductoModal from "./AddProductoModal";
-
+import { defaultrequestOptions } from "../../data";
 function NuevoProducto() {
   const [tipoProducto, setTipoProducto] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/tiposProductos")
+    fetch("http://localhost:3001/api/tiposProductos", defaultrequestOptions)
       .then((res) => res.json())
       .then((tipoProducto) => setTipoProducto(tipoProducto));
   }, []);

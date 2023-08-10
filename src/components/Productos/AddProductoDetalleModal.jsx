@@ -78,7 +78,7 @@ function AddProductoDetalleModal(props) {
                             onChange={(e) => setInsumo(e.target.value)}
                         >
                             <option value={-1} disabled>
-                                Selecciona un tipo de producto
+                                Selecciona un insumo
                             </option>
                             {insumo.map((insumos) => (
                                 <option key={insumos.id_insumo} value={insumos.id_insumo}>
@@ -87,7 +87,7 @@ function AddProductoDetalleModal(props) {
                             ))}
                         </Form.Select>
                     </Form.Group>
-
+                    <br></br>
                     <Form.Group className="mb-3" controlId="Precio">
                         <Form.Label>Cantidad</Form.Label>
                         <Form.Control

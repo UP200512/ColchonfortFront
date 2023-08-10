@@ -13,18 +13,17 @@ function UpdateInsumoModal(props) {
 
     const { unidadesmedida, tipoinsumo } = props;
     const id = props.id;
+    const tipo = props.tipo;
     const [nombre, setNombre] = useState(props.nombre);
-    const [tipo, setTipo] = useState(props.tipo);
-    const [unidad, setUnidad] = useState(props.unidad);
+    const [id_tipo, setTipo] = useState(props.id_tipo);
+    //const [unidad, setUnidad] = useState(props.unidad);
+    const [unidad_id, setUnidadId] = useState(props.unidad_id);
     const [cantidad, setCantidad] = useState(props.cantidad);
     const [descripcion, setDescripcion] = useState(props.descripcion);
-    const [insertedInsumo, setInserted] = useState({});
+    //const [insertedInsumo, setInserted] = useState({});
     const [nuevo_tipo_id, setNuevoTipoId] = useState({});
     const [nuevo_tipo, setNuevoTipo] = useState("");
     const [mostrarOtro, setMostrarOtro] = useState(false);
-
-    console.log("nuevo tipo id" + nuevo_tipo_id);
-    console.log("nuevo tipo" + nuevo_tipo);
 
     useEffect(() => {
         if (tipoinsumo && tipoinsumo.length > 0) {
@@ -34,13 +33,14 @@ function UpdateInsumoModal(props) {
         }
     }, [tipoinsumo]);
 
+
     const handleSubmit = () => {
         // e.preventDefault();
 
         const UpdatedInsumo = {
             nombre: nombre,
-            tipo_insumo_id: tipo,
-            unidad_de_medida_id: unidad,
+            tipo_insumo_id: id_tipo,
+            unidad_de_medida_id: unidad_id,
             descripcion: descripcion,
             cantidad: cantidad,
             nombre_tipo: nuevo_tipo
@@ -51,14 +51,12 @@ function UpdateInsumoModal(props) {
             body: JSON.stringify(UpdatedInsumo),
         };
         const ruta = "http://localhost:3000/api/insumos/" + id
-        // console.log(ruta);
+        
         fetch(ruta, requestOptions)
             .then((res) => res.json())
-            .then((insumo) => setInserted(insumo));
-        // console.log(insertedInsumo);
+            //.then((insumo) => setInserted(insumo));
         // .then((data) => console.log(data))
 
-        // console.log(newInsumo);
     };
 
     return (
@@ -94,7 +92,7 @@ function UpdateInsumoModal(props) {
                             required
                             defaultValue={-1}
                             aria-label="tipo_de_insumo"
-                            value={tipo}
+                            //value={tipo}
                             onChange={(e) => {
                                 setTipo(e.target.value)
                                 setMostrarOtro(e.target.value == nuevo_tipo_id) }
@@ -111,7 +109,7 @@ function UpdateInsumoModal(props) {
                                     </option>
                                 ))
                             ) : (
-                                <option disabled>No hay tipos de producto disponibles</option>
+                                <option disabled>No hay tipos de insumos disponibles</option>
                             )
                             }
                             <option value={nuevo_tipo_id} name="otro">
@@ -120,10 +118,10 @@ function UpdateInsumoModal(props) {
                         </Form.Select>
                         {mostrarOtro && (
                             <Form.Group>
-                                <Form.Label>Escribe el tipo de producto:</Form.Label>
+                                <Form.Label>Escribe el tipo de insumo:</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Ingresa el tipo de producto"
+                                    placeholder="Ingresa el tipo de insumo"
                                     onChange={(e) => setNuevoTipo(e.target.value)}
                                 />
                             </Form.Group>
@@ -135,8 +133,8 @@ function UpdateInsumoModal(props) {
                             required
                             defaultValue={-1}
                             aria-label="unidad_de_medida"
-                            value={unidad}
-                            onChange={(e) => setUnidad(e.target.value)}
+                            value={unidad_id}
+                            onChange={(e) => setUnidadId(e.target.value)}
                         >
                             <option value={-1} disabled>
                                 Selecciona una unidad de medida

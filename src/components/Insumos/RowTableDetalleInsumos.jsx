@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import UpdateInsumo from "./UpdateInsumo";
 
 const RowTableDetalleInsumos = (props) => {
-    const { id_insumo, nombre, tipo_insumo, tipo_insumo_id, unidad_de_medida, descripcion, cantidad } = props;
+    const { id_insumo, nombre, tipo_insumo, tipo_insumo_id, unidad_de_medida, unidad_id, descripcion, cantidad } = props;
     return (
         <tr key={id_insumo}>
             <td>{id_insumo}</td>
@@ -24,7 +24,9 @@ const RowTableDetalleInsumos = (props) => {
                     nombre={nombre}
                     id={id_insumo}
                     tipo={tipo_insumo}
+                    id_tipo={tipo_insumo_id}
                     unidad={unidad_de_medida}
+                    unidad_id={unidad_id}
                     descripcion={descripcion}
                     cantidad={cantidad}
                 />

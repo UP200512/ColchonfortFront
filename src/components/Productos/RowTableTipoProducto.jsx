@@ -1,10 +1,7 @@
 import React from "react";
-import { DeleteTipoProducto } from "./funciones";
-import { Form } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
 import UpdateTipoProducto from "./UpdateTipoProducto";
 
-const RowTableProductos = (props) => {
+const RowTableTipoProductos = (props) => {
     const { id_tipo_prod, nombre } = props;
     return (
         <tr key={id_tipo_prod}>
@@ -20,4 +17,4 @@ const RowTableProductos = (props) => {
     )
 }
 
-export default RowTableProductos;
+export default RowTableTipoProductos;

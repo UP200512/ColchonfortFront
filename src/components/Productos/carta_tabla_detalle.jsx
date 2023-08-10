@@ -23,14 +23,13 @@ const CartaTablaDetalle = (props) => {
       <br></br>
       <div class="card">
         <div class="card-header">
-          <h2>Productos</h2>
+          <h2>Detalle de producto {id_producto}</h2>
         </div>
         <div class="overflow-scroll" style={{ maxHeight: '600px' }}>
           <table width="1000" class="table table-striped table-bordered align-middle tabla_busqueda">
             <thead>
               <tr>
                 <th scope="col">ID Producto</th>
-                <th scope="col">ID Detalle</th>
                 <th scope="col">Producto</th>
                 <th scope="col">Tipo de Producto</th>
                 <th scope="col">ID Insumo</th>

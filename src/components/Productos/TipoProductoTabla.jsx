@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RowTableTipoProducto from './RowTableTipoProducto';
+import NuevoTipoProducto from './NuevoTipoProducto';
 
 const CartaTabla = () => {
   const [data, setData] = useState([]);
@@ -20,6 +21,7 @@ const CartaTabla = () => {
       <div class="card">
         <div class="card-header">
           <h2>Tipos Productos</h2>
+          <NuevoTipoProducto />
         </div>
         <div class="overflow-scroll" style={{ maxHeight: '600px' }}>
           <table WIDTH="1000" class="table table-striped table-bordered align-middle tabla_busqueda">
@@ -45,7 +47,7 @@ const CartaTabla = () => {
   )}
   else {
     return (
-      <h1>No hay productos</h1>
+      <h1>No hay tipos de productos</h1>
     );
   }
 };

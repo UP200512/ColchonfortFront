@@ -6,7 +6,7 @@ import OpcionesProductos from "../../components/Opciones_Productos/OpcionesProdu
 import OpcionesProductosDetalle from "../../components/Opciones_Detalle_Productos/OpcionesDetalleProductos";
 import TablaTipoProducto from "./TablaTipoProducto";
 import CartaTabla from "../../components/Productos/carta_tabla";
-
+import { defaultrequestOptions } from "../../data";
 
 export const DataContext = createContext()
 
@@ -17,7 +17,7 @@ function CartaGlobal() {
 
     useEffect(() => {
         // Realiza la solicitud HTTP a tu API y obtén los datos de la base de datos
-        fetch('http://localhost:3000/api/productos')
+        fetch('http://localhost:3000/api/productos', defaultrequestOptions)
             .then(response => response.json())
             .then(data => {
                 setDataOrigin(data)

@@ -9,7 +9,6 @@ const RowTableProductos = (props) => {
     return (
         <tr key={id_detalle}>
             <td>{id_producto}</td>
-            <td>{id_detalle}</td>
             <td>{nombre_producto}</td>
             <td>{tipo_producto}</td>
             <td>{id_insumo}</td>
@@ -17,7 +16,7 @@ const RowTableProductos = (props) => {
             <td>{tipo_insumo}</td>
             <td>{cantidad + " " + abreviacion}</td>
             <td>
-                <Form onSubmit={() => DeleteProductoDetalle(id_detalle, id_producto)}>
+                <Form onSubmit={() => DeleteProductoDetalle(id_detalle, id_producto, nombre_insumo)}>
                     <Form.Group>
                         <Button variant="danger"
                             type="submit"
