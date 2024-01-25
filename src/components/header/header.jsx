@@ -37,10 +37,22 @@ function Header() {
               </i>
             </label>
             <ul className="main-menu">
+              {/* <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li> */}
 
               <li className="menu-item"> {/**key para asigar un identificador unico que en este caso seria index */}
 
-                <a href='/carta/menu/100000'> Carta</a>
+                <a href='/carta/menu/100000'>Menú</a>
+
                 <a href='/Estadisticas'>Estadisticas</a>
                 <a href='/Pedidos'> Pedidos</a>
                 <a href='/insumos/card'> Insumos</a>

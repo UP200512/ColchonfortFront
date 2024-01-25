@@ -6,7 +6,7 @@ import PedidosDetalles from "../views/Pedidos/PedidosDetalles.jsx";
 import EstadisticasPage from "../views/EstadisticasPage/EstadisticasPage.jsx";
 import PersonalizarCuenta from "../views/Pedidos/PersonalisarCuenta.jsx";
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
+
 import InsumosGlobal from "../views/Insumos/InsumosGlobal.jsx";
 import CartaGlobal from "../views/Carta/CartaGlobal.jsx";
 import Empresa from "../views/Empresa/Empresa.jsx";

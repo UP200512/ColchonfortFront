@@ -26,13 +26,13 @@ function OpcionesProductos() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/carta/menu/100">Carta</Nav.Link>
-            <Nav.Link href="/carta/tabla/100">Tabla</Nav.Link>
+            <Nav.Link href="/carta/menu/100">Menú</Nav.Link>
+            <Nav.Link href="/carta/tabla/100">Administrar</Nav.Link>
                 
             <NuevoProducto/>
-            <Nav.Link href="/carta/tipos/51">
+            {/* <Nav.Link href="/carta/tipos/51">
               Administrar Tipos
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
             <Form.Control

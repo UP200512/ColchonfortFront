@@ -6,13 +6,13 @@ function TarjetaRest(props) {
     const { image, nombre, descripcion, valor } = props;
     const [show_imagen, setImagen] = useState(null);
     console.log(image)
-    const imagenURL = `http://localhost:3000/api/producto_imagen/${image}`;
+    const imagenURL = `http://localhost:3000/api/servir_imagen/${image}`;
 
     return (
 
-        <div
+        <div 
             style={{ background: `url(${imagenURL}) center`, backgroundSize: 'cover' }}
-            className="tarjeta-rest">
+            className="d-block w-100">
             <div className="wrap-text_tarjeta-rest">
                 <h3>{nombre}</h3>
                 <p>{descripcion}</p>

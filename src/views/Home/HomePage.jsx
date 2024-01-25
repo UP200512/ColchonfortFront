@@ -1,6 +1,7 @@
 import React, {createContext, useState, useEffect} from "react";
 import Hero from "../../components/Hero/Hero.jsx";
-import Container from "../../components/Card_container/Card_Container.jsx";
+import Container from "../../components/Card_container/Container.jsx";
+import Container2 from "../../components/Card_container2/Card_Container2.jsx";
 import "./HomePage.css";
 import { defaultrequestOptions } from "../../data.js";
 export const DataContextHome = createContext()
@@ -27,6 +28,7 @@ function HomePage() {
       <Hero/>
       <div className="Back">
       <Container/>
+      {/* <Container2 /> */}
       </div>
     </DataContextHome.Provider>
   );
